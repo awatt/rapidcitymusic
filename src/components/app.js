@@ -15,7 +15,7 @@ import SvgIcon from 'material-ui/SvgIcon';
 import Header from './header';
 import SideMenu from './sideMenu';
 import Footer from './footer';
-import TrackCard from './trackCard';
+import PaperList from './paper-list'
 import '../index.scss';
 
 const styles = {
@@ -37,7 +37,7 @@ class App extends Component {
   constructor(props, context) {
     super(props, context);
 
-    console.log(props);
+    console.log(props.testProp);
 
     this.handleRequestClose = this.handleRequestClose.bind(this);
     this.handleTouchTap = this.handleTouchTap.bind(this);
@@ -66,7 +66,7 @@ class App extends Component {
         <div style={styles.container}>
           <div id='menuContainer'><SideMenu /></div>
           <Header />
-
+          <PaperList />
           <Footer />
         </div>
       </MuiThemeProvider>

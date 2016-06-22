@@ -1,82 +1,63 @@
-import React from 'react';
+import React, {Component} from 'react';
+import Dialog from 'material-ui/Dialog';
+import RaisedButton from 'material-ui/RaisedButton';
+import Paper from 'material-ui/Paper';
+import './stylesheets/paper-item.scss';
 
-export default class TodosListItem extends React.Component {
+export default class PaperItem extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            isEditing: false
-        };
-    }
+          open: false,
+      };
 
-    renderTaskSection() {
-        const { task, isCompleted } = this.props;
+      this.handleOpen = this.handleOpen.bind(this);
+      this.handleClose = this.handleClose.bind(this);
+  }
 
-        const taskStyle = {
-            color: isCompleted ? 'green' : 'red',
-            cursor: 'pointer'
-        };
+  handleOpen() {
+    this.setState({open: true});
+  };
 
-        if (this.state.isEditing) {
-            return (
-                <td>
-                    <form onSubmit={this.onSaveClick.bind(this)}>
-                        <input type="text" defaultValue={task} ref="editInput" />
-                    </form>
-                </td>
-            );
-        }
+  handleClose() {
+    this.setState({open: false});
+  };
 
-        return (
-            <td style={taskStyle}
-                onClick={this.props.toggleTask.bind(this, task)}
-            >
-                {task}
-            </td>
-        );
-    }
+  render() {
 
-    renderActionsSection() {
-        if (this.state.isEditing) {
-            return (
-                <td>
-                    <button className="btn waves-effect waves-light orange" onClick={this.onSaveClick.bind(this)}>Save</button>
-                    <button className="btn waves-effect waves-light orange" onClick={this.onCancelClick.bind(this)}>Cancel</button>
-                </td>
-            );
-        }
+    const actions = [
+      this.props.playerWidget,
+      <RaisedButton
+        label="Close"
+        primary={true}
+        onTouchTap={this.handleClose} />,
+    ];
 
-        return (
-            <td>
-                <button className="btn waves-effect waves-light orange" onClick={this.onEditClick.bind(this)}>Edit</button>
-                <button className="btn waves-effect waves-light orange" onClick={this.props.deleteTask.bind(this, this.props.task)}>Delete</button>
-            </td>
-        );
-    }
+    const content = [
+        <img src={this.props.img_sm} className='paperImg' />,
+        this.props.lyrics,
+    ];
 
-    render() {
-        return (
-            <tr>
-                {this.renderTaskSection()}
-                {this.renderActionsSection()}
-            </tr>
-        );
-    }
+    const paperStyle = {
+      height: 250,
+      width: 250,
+      margin: 20,
+      textAlign: 'center',
+      overflow: 'hidden',
+      display: 'inline-block',
+    };
 
-    onEditClick() {
-        this.setState({ isEditing: true });
-    }
-
-    onCancelClick() {
-        this.setState({ isEditing: false });
-    }
-
-    onSaveClick(event) {
-        event.preventDefault();
-
-        const oldTask = this.props.task;
-        const newTask = this.refs.editInput.value;
-        this.props.saveTask(oldTask, newTask);
-        this.setState({ isEditing: false });
-    }
+    return (
+      <div>
+        <Paper onTouchTap={this.handleAboutDialogOpen} style={paperStyle} zDepth={1} children={content} circle={true} />
+        <Dialog
+          actions={actions}
+          modal={false}
+          children={this.props.img_lg}
+          open={this.state.open}
+          onRequestClose={this.handleClose} />
+      </div>
+    );
+  }
 }

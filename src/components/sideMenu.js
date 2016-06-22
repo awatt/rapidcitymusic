@@ -40,7 +40,8 @@ export default class SideMenu extends Component {
     });
   }
 
-  handleAboutDialogOpen() {
+  handleAboutDialogOpen(event) {
+    console.log(event)
     this.setState({dialogOpen: true, dialogTitle: 'About', dialogContent: <About />});
   }
 
@@ -52,7 +53,8 @@ export default class SideMenu extends Component {
     this.setState({dialogOpen: true, dialogTitle: 'Credits', dialogContent: <Credits />});
   }
   
-  handleContactDialogOpen() {
+  handleContactDialogOpen(event) {
+    console.log(event)
     this.setState({dialogOpen: true, dialogTitle: 'Contact', dialogContent: <EmailInput />});
   }    
 
@@ -97,10 +99,10 @@ export default class SideMenu extends Component {
             onRequestClose={this.handleDialogClose}
             children={this.state.dialogContent} />
 
-          <MenuItem onTouchTap={this.handleAboutDialogOpen}>ABOUT</MenuItem>
+          <MenuItem prop1='here I am about' onTouchTap={this.handleAboutDialogOpen}>ABOUT</MenuItem>
           <MenuItem onTouchTap={this.handleSoundsDialogOpen}>SOUNDS</MenuItem>
           <MenuItem onTouchTap={this.handleClose}>SHOP</MenuItem>
-          <MenuItem onTouchTap={this.handleContactDialogOpen}>CONTACT</MenuItem>
+          <MenuItem prop2='here I am contact' onTouchTap={this.handleContactDialogOpen}>CONTACT</MenuItem>
           <MenuItem onTouchTap={this.handleCreditsDialogOpen}>CREDITS</MenuItem>
         </Drawer>
       </div>
