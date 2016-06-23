@@ -61,7 +61,7 @@ export default class SideMenu extends Component {
   handleDialogClose() {
     this.setState({
       dialogOpen: false
-    });
+    }); 
   }
 
   render() {

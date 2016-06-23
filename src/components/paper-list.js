@@ -18,20 +18,18 @@ import PopUpCity from './lyrics/popupcity.js'
 import SmallHours from './lyrics/smallhours.js'
 import WaywardSatellite from './lyrics/waywardsatellite.js'
 import WhyShouldIMind from './lyrics/whyshouldimind.js'
-
-
-
+import './stylesheets/paper-list.scss'
 
 const PaperCircle = () => (
-  <div>
-    <PaperItem img_sm={Img1_sm} img_lg={Img1_lg} lyrics={AllIsreal} playerWidget='' />
-    <PaperItem img_sm={Img2_sm} img_lg={Img2_lg} lyrics={Elephantine} playerWidget='' />
-    <PaperItem img_sm={Img3_sm} img_lg={Img3_lg} lyrics={Eva} playerWidget='' />
-    <PaperItem img_sm={Img4_sm} img_lg={Img4_lg} lyrics={ICantWait} playerWidget='' />
-    <PaperItem img_sm={Img5_sm} img_lg={Img5_lg} lyrics={PopUpCity} playerWidget='' />
-    <PaperItem img_sm={Img1_sm} img_lg={Img1_lg} lyrics={SmallHours} playerWidget='' />
-    <PaperItem img_sm={Img2_sm} img_lg={Img2_lg} lyrics={WaywardSatellite} playerWidget='' />
-    <PaperItem img_sm={Img3_sm} img_lg={Img3_lg} lyrics={WhyShouldIMind} playerWidget='' />
+  <div id='trackListContainer'>
+    <PaperItem img_sm={Img1_sm} img_lg={Img1_lg} lyrics={<AllIsreal />} playerWidget='' />
+    <PaperItem img_sm={Img2_sm} img_lg={Img2_lg} lyrics={<Elephantine />} playerWidget='' />
+    <PaperItem img_sm={Img3_sm} img_lg={Img3_lg} lyrics={<Eva />} playerWidget='' />
+    <PaperItem img_sm={Img4_sm} img_lg={Img4_lg} lyrics={<ICantWait />} playerWidget='' />
+    <PaperItem img_sm={Img5_sm} img_lg={Img5_lg} lyrics={<PopUpCity />} playerWidget='' />
+    <PaperItem img_sm={Img1_sm} img_lg={Img1_lg} lyrics={<SmallHours />} playerWidget='' />
+    <PaperItem img_sm={Img2_sm} img_lg={Img2_lg} lyrics={<WaywardSatellite />} playerWidget='' />
+    <PaperItem img_sm={Img3_sm} img_lg={Img3_lg} lyrics={<WhyShouldIMind />} playerWidget='' />
   </div>
 );
 

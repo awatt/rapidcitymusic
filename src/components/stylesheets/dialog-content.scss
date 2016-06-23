@@ -1,0 +1,29 @@
+.trackContainer {
+	position: relative;
+}
+
+.trackContainer .lyricsBox {
+	display: none;
+	font-size: 1.2em;
+	line-height: 1em;
+}
+
+.trackContainer .trackImgLg {
+	position: relative;
+	z-index: 2;
+}
+
+.trackContainer:hover .lyricsBox {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	left: -1px;
+	top: -1px;
+	height: 100%;
+	width: auto;
+}
+
+.trackContainer:hover .trackImgLg {
+	opacity: 0.2;
+}
+

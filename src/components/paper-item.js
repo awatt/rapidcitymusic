@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
+import DialogContent from './dialog-content.js';
 import './stylesheets/paper-item.scss';
 
 export default class PaperItem extends Component {
@@ -34,30 +35,47 @@ export default class PaperItem extends Component {
         onTouchTap={this.handleClose} />,
     ];
 
-    const content = [
-        <img src={this.props.img_sm} className='paperImg' />,
-        this.props.lyrics,
-    ];
-
     const paperStyle = {
       height: 250,
       width: 250,
-      margin: 20,
+      margin: 30,
       textAlign: 'center',
       overflow: 'hidden',
       display: 'inline-block',
     };
 
+    const styles = {
+      dialogRoot: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: 0,
+      },
+      dialogContent: {
+        position: 'relative',
+        width: '100%',
+        maxWidth: 'none',
+      },
+      dialogBody: {
+        paddingBottom: 0
+      }
+    };
+
     return (
-      <div>
-        <Paper onTouchTap={this.handleAboutDialogOpen} style={paperStyle} zDepth={1} children={content} circle={true} />
+      <span>
+        <Paper onTouchTap={this.handleOpen} style={paperStyle} zDepth={1} children={<img src={this.props.img_sm} />} circle={true} />
         <Dialog
+          contentStyle={styles.dialogContent}
+          bodyStyle={styles.dialogBody}
+          style={styles.dialogRoot}
+          repositionOnUpdate={false}
           actions={actions}
           modal={false}
-          children={this.props.img_lg}
+          autoDetectWindowHeight={false}
+          children={<DialogContent img_lg={this.props.img_lg} lyrics={this.props.lyrics} />}
           open={this.state.open}
           onRequestClose={this.handleClose} />
-      </div>
+      </span>
     );
   }
 }
