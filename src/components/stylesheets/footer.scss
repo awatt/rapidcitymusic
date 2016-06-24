@@ -8,11 +8,12 @@ footer {
 	background-color: #FF5722;
 	font-size: 11px;
 	line-height: 12px;
+	z-index: 11;
 }
 
 #coverImg {
 	position: fixed;
-	bottom: 40px;
+	bottom: 20px;
 	width: 100%;
 	// background-color: black;
 	z-index: 10;
