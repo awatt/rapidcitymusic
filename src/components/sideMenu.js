@@ -78,7 +78,7 @@ export default class SideMenu extends Component {
           <FloatingActionButton 
               onTouchTap={this.handleToggle}
               id='menuButton'
-              backgroundColor={'#FF5722'}
+              backgroundColor={'#00796B'}
               mini={true}
               zDepth={3}
           >
@@ -99,10 +99,10 @@ export default class SideMenu extends Component {
             onRequestClose={this.handleDialogClose}
             children={this.state.dialogContent} />
 
-          <MenuItem prop1='here I am about' onTouchTap={this.handleAboutDialogOpen}>ABOUT</MenuItem>
+          <MenuItem onTouchTap={this.handleAboutDialogOpen}>ABOUT</MenuItem>
           <MenuItem onTouchTap={this.handleSoundsDialogOpen}>SOUNDS</MenuItem>
           <MenuItem onTouchTap={this.handleClose}>SHOP</MenuItem>
-          <MenuItem prop2='here I am contact' onTouchTap={this.handleContactDialogOpen}>CONTACT</MenuItem>
+          <MenuItem onTouchTap={this.handleContactDialogOpen}>CONTACT</MenuItem>
           <MenuItem onTouchTap={this.handleCreditsDialogOpen}>CREDITS</MenuItem>
         </Drawer>
       </div>

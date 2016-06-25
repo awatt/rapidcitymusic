@@ -31,26 +31,26 @@ export default class PaperItem extends Component {
 
   handleScroll() {
     
-    console.log("this.props.trackName", this.props.trackName)
-    console.log('findDOMNode(this).scrollTop: ', findDOMNode(this).offset)
-    
-
-    // if(scrollTop/this.props.trackNum > 324){
-    //   this.setState({zIndex: 100})
-    // }
-    // console.log('this.props.trackNum: ', this.props.trackNum)
-    // console.log('this.state.zIndex: ', this.state.zIndex)
+    //adjust trackcard z-index for clickability once it clears the 'fence'
+    let scrollTop = event.srcElement.body.scrollTop;
+    let elPosition = $(findDOMNode(this)).position().top;
+  
+    if(scrollTop - elPosition > -440){
+      this.setState({zIndex: 101});
+    } else if (this.state.zIndex === 101){
+      this.setState({zIndex: 0});
+    }
+    console.log('this.props.trackNum: ', this.props.trackNum)
+    console.log("scrollTop - elPosition", scrollTop - elPosition)
+    console.log('this.state.zIndex: ', this.state.zIndex)
   };
 
   componentDidMount() {
-    // console.log('this.refs: ', this.refs)
-    // console.log('findDOMNode(this).scrollTop: ', findDOMNode(this).scrollTop)
-    // console.log('$(this).position(): ', $(this).position())
     window.addEventListener('scroll', this.handleScroll);
   }
 
   componentWillUnmount() {
-    // window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll);
   }
 
   render() {
@@ -66,7 +66,8 @@ export default class PaperItem extends Component {
     const paperStyle = {
       height: 250,
       width: 250,
-      margin: 30,
+      margin: 40,
+      position: 'relative',
       textAlign: 'center',
       overflow: 'hidden',
       display: 'inline-block',
@@ -78,17 +79,18 @@ export default class PaperItem extends Component {
     const styles = {
       dialogRoot: {
         display: 'flex',
-        alignItems: 'center',
+        // alignItems: 'center',
         justifyContent: 'center',
         paddingTop: 0,
+        paddingBottom: 0,
       },
       dialogContent: {
         position: 'relative',
-        width: '100%',
+        width: '80%',
         maxWidth: 'none',
       },
       dialogBody: {
-        paddingBottom: 0
+        padding: 'none',
       }
     };
 
@@ -100,7 +102,7 @@ export default class PaperItem extends Component {
           bodyStyle={styles.dialogBody}
           style={styles.dialogRoot}
           repositionOnUpdate={false}
-          actions={actions}
+          
           modal={false}
           autoDetectWindowHeight={false}
           children={<DialogContent img_lg={this.props.img_lg} lyrics={this.props.lyrics} />}

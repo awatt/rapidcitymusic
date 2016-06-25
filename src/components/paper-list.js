@@ -22,43 +22,18 @@ import './stylesheets/paper-list.scss'
 
 const PaperCircle = () => (
   <div id='trackListContainer'>
-    <PaperItem img_sm={Img1_sm} trackNum={1} trackName='AllIsreal' img_lg={Img1_lg} lyrics={<AllIsreal />} playerWidget='' />
-    <PaperItem img_sm={Img2_sm} trackNum={2} trackName='Elephantine' img_lg={Img2_lg} lyrics={<Elephantine />} playerWidget='' />
-    <PaperItem img_sm={Img3_sm} trackNum={3} trackName='Eva' img_lg={Img3_lg} lyrics={<Eva />} playerWidget='' />
-    <PaperItem img_sm={Img4_sm} trackNum={4} trackName='ICantWait' img_lg={Img4_lg} lyrics={<ICantWait />} playerWidget='' />
-    <PaperItem img_sm={Img5_sm} trackNum={5} trackName='PopUpCity' img_lg={Img5_lg} lyrics={<PopUpCity />} playerWidget='' />
-    <PaperItem img_sm={Img1_sm} trackNum={6} trackName='SmallHours' img_lg={Img1_lg} lyrics={<SmallHours />} playerWidget='' />
-    <PaperItem img_sm={Img2_sm} trackNum={7} trackName='WaywardSatellite' img_lg={Img2_lg} lyrics={<WaywardSatellite />} playerWidget='' />
-    <PaperItem img_sm={Img3_sm} trackNum={8} trackName='WhyShouldIMind' img_lg={Img3_lg} lyrics={<WhyShouldIMind />} playerWidget='' />
+    <PaperItem img_sm={Img1_sm} trackNum={1} trackName='AllIsreal' img_lg={Img1_lg} lyrics={<AllIsreal />} />
+    <PaperItem img_sm={Img2_sm} trackNum={2} trackName='Elephantine' img_lg={Img2_lg} lyrics={<Elephantine />} />
+    <PaperItem img_sm={Img3_sm} trackNum={3} trackName='Eva' img_lg={Img3_lg} lyrics={<Eva />} />
+    <PaperItem img_sm={Img4_sm} trackNum={4} trackName='ICantWait' img_lg={Img4_lg} lyrics={<ICantWait />} />
+    <PaperItem img_sm={Img5_sm} trackNum={5} trackName='PopUpCity' img_lg={Img5_lg} lyrics={<PopUpCity />} />
+    <PaperItem img_sm={Img1_sm} trackNum={6} trackName='SmallHours' img_lg={Img1_lg} lyrics={<SmallHours />} />
+    <PaperItem img_sm={Img2_sm} trackNum={7} trackName='WaywardSatellite' img_lg={Img2_lg} lyrics={<WaywardSatellite />} />
+    <PaperItem img_sm={Img3_sm} trackNum={8} trackName='WhyShouldIMind' img_lg={Img3_lg} lyrics={<WhyShouldIMind />} />
   </div>
 );
 
 
 export default PaperCircle;
-
-// import _ from 'lodash';
-// import React from 'react';
-// import TodosListHeader from './todos-list-header';
-// import TodosListItem from './todos-list-item';
-// // import './stylesheets/todos-list.scss'
-
-// export default class TodosList extends React.Component {
-//     renderItems() {
-//         const props = _.omit(this.props, 'todos');
-
-//         return _.map(this.props.todos, (todo, index) => <TodosListItem key={index} {...todo} {...props} />);
-//     }
-
-//     render() {
-//         return (
-//             <table>
-//                 <TodosListHeader />
-//                 <tbody>
-//                     {this.renderItems()}
-//                 </tbody>
-//             </table>
-//         );
-//     }
-// }
 
 

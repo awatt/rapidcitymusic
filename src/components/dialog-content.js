@@ -17,6 +17,9 @@ export default class DialogContent extends Component {
           <div className='lyricsBox'>
           {this.props.lyrics}
           </div>
+          <div className='playerBox'>
+          {this.props.playerWidget}
+          </div>
         
         
       </div>

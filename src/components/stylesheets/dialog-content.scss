@@ -4,26 +4,42 @@
 
 .trackContainer .lyricsBox {
 	display: none;
-	font-size: 1.2em;
+	position: absolute;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	font-size: 1em;
 	line-height: 1em;
 }
 
+.trackContainer .lyricsBox .lyrics {
+	width: 100%;
+	text-align: center;
+
+}
+
 .trackContainer .trackImgLg {
+	height: auto;
+	opacity: 1;
 	position: relative;
+	transition-property: opacity;
+	transition-timing-function: ease linear;
+	transition-duration: 0.5s;
+	width: 100%;
 	z-index: 2;
 }
 
 .trackContainer:hover .lyricsBox {
 	display: block;
-	position: absolute;
 	z-index: 1;
-	left: -1px;
-	top: -1px;
+	left: 10px;
+	top: 10px;
 	height: 100%;
 	width: auto;
 }
 
 .trackContainer:hover .trackImgLg {
 	opacity: 0.2;
+	transition-duration: 0.5s;
 }
 

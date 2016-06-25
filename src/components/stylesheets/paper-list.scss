@@ -1,4 +1,27 @@
 #trackListContainer {
 	width: 50%;
+	margin-left: 10%;
+	margin-bottom: 40%;
+}
+
+
+@media screen and (min-width: 450px) {
+    #trackListContainer {
+	width: 50%;
+	margin-left: 20%;
+}
+}
+
+@media screen and (min-width: 550px) {
+    #trackListContainer {
+	width: 70%;
+	margin-left: 25%;
+}
+}
+
+@media screen and (min-width: 700px) {
+    #trackListContainer {
+	width: 60%;
 	margin-left: 30%;
+}
 }
