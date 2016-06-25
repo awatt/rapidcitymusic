@@ -1,5 +1,13 @@
-.header {
-	color: #62b08c;
-	font-weight: bold;
-	font-size: 90px;
+
+svg {
+	fill: #62b08c;
+	left: 0;
+	position: fixed;
+	top: 0;
+	transform: translate(90px, -20px);
 }
+
+#title {
+	z-index: 1000;
+}
+

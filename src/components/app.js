@@ -65,8 +65,8 @@ class App extends Component {
       <MuiThemeProvider muiTheme={darkMuiTheme}>
         <div style={styles.container}>
           <div id='menuContainer'><SideMenu /></div>
-          <Header />
           <PaperList />
+          <Header />
           <Footer />
         </div>
       </MuiThemeProvider>

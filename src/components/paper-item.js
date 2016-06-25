@@ -15,7 +15,7 @@ export default class PaperItem extends Component {
           open: false,
           zIndex: 0,
       };
-
+      
       this.handleOpen = this.handleOpen.bind(this);
       this.handleClose = this.handleClose.bind(this);
       this.handleScroll = this.handleScroll.bind(this);
@@ -40,9 +40,6 @@ export default class PaperItem extends Component {
     } else if (this.state.zIndex === 101){
       this.setState({zIndex: 0});
     }
-    console.log('this.props.trackNum: ', this.props.trackNum)
-    console.log("scrollTop - elPosition", scrollTop - elPosition)
-    console.log('this.state.zIndex: ', this.state.zIndex)
   };
 
   componentDidMount() {
