@@ -9,9 +9,14 @@ import About from './about.js'
 import TrackList from './trackList.js'
 import EmailInput from './emailInput.js'
 import Credits from './credits.js'
+import IconButton from 'material-ui/IconButton';
 import {red500, yellow500, blue500} from 'material-ui/styles/colors';
 import './stylesheets/sideMenu.scss'
-// import RaisedButton from 'material-ui/RaisedButton';
+import InfoIcon from 'material-ui/svg-icons/action/info';
+import MusicNoteIcon from 'material-ui/svg-icons/image/music-note';
+import CartIcon from 'material-ui/svg-icons/action/shopping-cart';
+import EmailIcon from 'material-ui/svg-icons/communication/contact-mail';
+import PeopleIcon from 'material-ui/svg-icons/social/people';
 
 export default class SideMenu extends Component {
 
@@ -66,27 +71,27 @@ export default class SideMenu extends Component {
 
   render() {
 
-    const standardActions = (
-      <FlatButton
-        label="Ok"
-        primary={true}
-        onTouchTap={this.handleClose} />
-    );
+   const menuIconStyles = {
+    fill: '#74b062',
+    height: 48,
+    width: 48,
+  }
 
     return (
       <div>
-          <FloatingActionButton 
-              onTouchTap={this.handleToggle}
-              id='menuButton'
-              backgroundColor={'#00796B'}
-              mini={true}
-              zDepth={3}
+          <IconButton
+          onTouchTap={this.handleToggle}
+          touch={true}
+          id='SVG Icon'
+          iconStyle={{fill: '#6286b0'}}
           >
-            <Menu />
-          </FloatingActionButton>
+          <Menu />
+          </IconButton>
           
         <Drawer
           docked={false}
+          containerStyle={{backgroundColor: '#6286b0'}}
+          containerClassName='menuContainer'
           width={100}
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
@@ -99,11 +104,13 @@ export default class SideMenu extends Component {
             onRequestClose={this.handleDialogClose}
             children={this.state.dialogContent} />
 
-          <MenuItem onTouchTap={this.handleAboutDialogOpen}>ABOUT</MenuItem>
-          <MenuItem onTouchTap={this.handleSoundsDialogOpen}>SOUNDS</MenuItem>
-          <MenuItem onTouchTap={this.handleClose}>SHOP</MenuItem>
-          <MenuItem onTouchTap={this.handleContactDialogOpen}>CONTACT</MenuItem>
-          <MenuItem onTouchTap={this.handleCreditsDialogOpen}>CREDITS</MenuItem>
+
+
+          <MenuItem onTouchTap={this.handleAboutDialogOpen}><InfoIcon style={menuIconStyles} /></MenuItem>
+          <MenuItem onTouchTap={this.handleSoundsDialogOpen}><MusicNoteIcon style={menuIconStyles} /></MenuItem>
+          <MenuItem onTouchTap={this.handleClose}><CartIcon style={menuIconStyles} /></MenuItem>
+          <MenuItem onTouchTap={this.handleContactDialogOpen}><EmailIcon style={menuIconStyles} /></MenuItem>
+          <MenuItem onTouchTap={this.handleCreditsDialogOpen}><PeopleIcon style={menuIconStyles} /></MenuItem>
         </Drawer>
       </div>
     );

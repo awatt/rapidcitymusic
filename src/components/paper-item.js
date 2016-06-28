@@ -71,8 +71,6 @@ export default class PaperItem extends Component {
       zIndex: this.state.zIndex,
     };
 
-    console.log('paperStyle.zIndex: ', paperStyle.zIndex)
-
     const styles = {
       dialogRoot: {
         display: 'flex',
@@ -93,7 +91,7 @@ export default class PaperItem extends Component {
 
     return (
       <span>
-        <Paper className='paperContainer' ref={this.props.trackName} onTouchTap={this.handleOpen} style={paperStyle} zDepth={1} children={<img style={{height: '100%'}} src={this.props.img_sm} />} circle={true} />
+        <Paper className='paperContainer' tooltip='test' ref={this.props.trackName} onTouchTap={this.handleOpen} style={paperStyle} zDepth={1} children={<img style={{height: '100%'}} src={this.props.img_sm} />} circle={true} />
         <Dialog
           contentStyle={styles.dialogContent}
           bodyStyle={styles.dialogBody}
