@@ -11,3 +11,42 @@
 	z-index: 1000;
 }
 
+#A, #P, #Ii, #D, #T, #Y, #Iii, #R, #C {
+	transition: visibility 1s;
+}
+
+.shifted #A {
+	visibility: hidden;
+}
+
+.shifted #P {
+	visibility: hidden;
+}
+
+.shifted #Ii {
+	visibility: hidden;
+}
+
+.shifted #D {
+	visibility: hidden;
+}
+
+.shifted #T {
+	visibility: hidden;
+}
+
+.shifted #Y {
+	visibility: hidden;
+}
+
+.shifted #Iii {
+	visibility: hidden;
+}
+
+.shifted #R {
+	transform: translateX(-85px);
+}
+
+.shifted #C {
+	transform: translateX(-267px);
+}

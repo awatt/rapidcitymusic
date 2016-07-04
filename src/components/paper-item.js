@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import { findDOMNode } from 'react-dom';
+import globalEmitter from './globalEmitter.js';
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import DialogContent from './dialog-content.js';
+import Header from './header.js';
 import './stylesheets/paper-item.scss';
 import $ from 'jquery';
 
@@ -13,6 +15,7 @@ export default class PaperItem extends Component {
 
         this.state = {
           open: false,
+          shifted: false,
           zIndex: 0,
       };
       
@@ -34,7 +37,18 @@ export default class PaperItem extends Component {
     //adjust trackcard z-index for clickability once it clears the 'fence'
     let scrollTop = event.srcElement.body.scrollTop;
     let elPosition = $(findDOMNode(this)).position().top;
-  
+
+    if(this.props.trackNum === 1 && scrollTop > 30 && !this.state.shifted){
+      this.setState({shifted: !this.state.shifted});
+      globalEmitter.emit('toggleShift')
+    }
+
+    if(this.props.trackNum === 1 && scrollTop <= 30 && this.state.shifted){
+      this.setState({shifted: !this.state.shifted});
+      globalEmitter.emit('toggleShift')
+    }
+
+
     if(scrollTop - elPosition > -440){
       this.setState({zIndex: 101});
     } else if (this.state.zIndex === 101){
