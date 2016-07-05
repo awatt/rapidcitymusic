@@ -34,21 +34,23 @@ export default class PaperItem extends Component {
 
   handleScroll() {
     
-    //adjust trackcard z-index for clickability once it clears the 'fence'
+    //adjust photo z-index for clickability once it clears the 'fence'
     let scrollTop = event.srcElement.body.scrollTop;
     let elPosition = $(findDOMNode(this)).position().top;
 
+    //toggle title shift when photo scrolls overlaps with it
     if(this.props.trackNum === 1 && scrollTop > 30 && !this.state.shifted){
       this.setState({shifted: !this.state.shifted});
       globalEmitter.emit('toggleShift')
     }
 
+    //toggle shift back to normal lettering
     if(this.props.trackNum === 1 && scrollTop <= 30 && this.state.shifted){
       this.setState({shifted: !this.state.shifted});
       globalEmitter.emit('toggleShift')
     }
 
-
+    //detect when photo has cleared the fence
     if(scrollTop - elPosition > -440){
       this.setState({zIndex: 101});
     } else if (this.state.zIndex === 101){
@@ -75,9 +77,6 @@ export default class PaperItem extends Component {
     ];
 
     const paperStyle = {
-      height: 250,
-      width: 250,
-      margin: 40,
       position: 'relative',
       textAlign: 'center',
       overflow: 'hidden',

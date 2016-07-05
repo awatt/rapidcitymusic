@@ -1,3 +1,43 @@
+ .paperContainer {
+ 	height: 200px;
+    width: 200px;
+    margin: 40px;
+ }
+
+@media screen and (min-width: 450px) {
+ .paperContainer {
+ 	height: 225px;
+    width: 225px;
+    margin: 40px;
+ }
+}
+
+@media screen and (min-width: 550px) {
+ .paperContainer {
+ 	height: 250px;
+    width: 250px;
+    margin: 40px;
+ }
+}
+
+@media screen and (min-width: 650px) {
+ .paperContainer {
+ 	height: 300px;
+    width: 300px;
+    margin: 40px;
+ }
+}
+
+@media screen and (min-width: 850px) {
+ .paperContainer {
+ 	height: 350px;
+    width: 350px;
+    margin: 40px;
+ }
+}
+
  .paperContainer:hover {
  	z-index: 100;
  }
+
+
