@@ -28,8 +28,7 @@ export default class EmailInput extends Component {
         <TextField
           id="text-field-controlled"
           value={this.state.value}
-          onChange={this.handleChange}
-        />
+          onChange={this.handleChange} />
       </div>
     );
   }

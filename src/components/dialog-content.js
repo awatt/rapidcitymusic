@@ -6,13 +6,9 @@ export default class DialogContent extends Component {
         super(props);
   }
 
-
-
   render() {
-
     return (
-      <div className='trackContainer'>
-        
+      <div className='trackContainer'>        
           <img className='trackImgLg' src={this.props.img_lg} />
           <div className='lyricsBox'>
           {this.props.lyrics}
@@ -20,8 +16,6 @@ export default class DialogContent extends Component {
           <div className='playerBox'>
           {this.props.playerWidget}
           </div>
-        
-        
       </div>
     );
   }

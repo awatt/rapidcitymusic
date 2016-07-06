@@ -51,16 +51,16 @@ export default class SideMenu extends Component {
   }
 
   handleSoundsDialogOpen() {
-    this.setState({dialogOpen: true, dialogTitle: 'Sounds', dialogContent: <TrackList />});
+    this.setState({dialogOpen: true, dialogTitle: 'Sounds from the Album', dialogContent: <TrackList />});
   }
 
   handleCreditsDialogOpen() {
-    this.setState({dialogOpen: true, dialogTitle: 'Credits', dialogContent: <Credits />});
+    this.setState({dialogOpen: true, dialogTitle: 'Album Credits', dialogContent: <Credits />});
   }
   
   handleContactDialogOpen(event) {
     console.log(event)
-    this.setState({dialogOpen: true, dialogTitle: 'Contact', dialogContent: <EmailInput />});
+    this.setState({dialogOpen: true, dialogTitle: 'Subscribe to the Rapid City Newsletter for updates on new music, videos, events and shows in your area', dialogContent: <EmailInput />});
   }    
 
   handleDialogClose() {
@@ -72,9 +72,15 @@ export default class SideMenu extends Component {
   render() {
 
    const menuIconStyles = {
-    fill: '#74b062',
-    height: 48,
-    width: 48,
+    fill: '#366396',
+    height: 38,
+    width: 38,
+    verticalAlign: 'middle',
+  }
+
+  const menuItemStyles = {
+    marginTop: 20,
+    marginBottom: 20,
   }
 
     return (
@@ -90,7 +96,7 @@ export default class SideMenu extends Component {
           
         <Drawer
           docked={false}
-          containerStyle={{backgroundColor: '#6286b0'}}
+          containerStyle={{backgroundColor: '#212121'}}
           containerClassName='menuContainer'
           width={100}
           open={this.state.open}
@@ -104,13 +110,11 @@ export default class SideMenu extends Component {
             onRequestClose={this.handleDialogClose}
             children={this.state.dialogContent} />
 
-
-
-          <MenuItem onTouchTap={this.handleAboutDialogOpen}><InfoIcon style={menuIconStyles} /></MenuItem>
-          <MenuItem onTouchTap={this.handleSoundsDialogOpen}><MusicNoteIcon style={menuIconStyles} /></MenuItem>
-          <MenuItem onTouchTap={this.handleClose}><CartIcon style={menuIconStyles} /></MenuItem>
-          <MenuItem onTouchTap={this.handleContactDialogOpen}><EmailIcon style={menuIconStyles} /></MenuItem>
-          <MenuItem onTouchTap={this.handleCreditsDialogOpen}><PeopleIcon style={menuIconStyles} /></MenuItem>
+          <MenuItem style={menuItemStyles} onTouchTap={this.handleAboutDialogOpen}><InfoIcon style={menuIconStyles} /></MenuItem>
+          <MenuItem style={menuItemStyles} onTouchTap={this.handleSoundsDialogOpen}><MusicNoteIcon style={menuIconStyles} /></MenuItem>
+          <MenuItem style={menuItemStyles} linkButton={true} target='_blank' href='https://rapidcity.bandcamp.com/' onTouchTap={this.handleClose}><CartIcon style={menuIconStyles} /></MenuItem>
+          <MenuItem style={menuItemStyles} onTouchTap={this.handleContactDialogOpen}><EmailIcon style={menuIconStyles} /></MenuItem>
+          <MenuItem style={menuItemStyles} onTouchTap={this.handleCreditsDialogOpen}><PeopleIcon style={menuIconStyles} /></MenuItem>
         </Drawer>
       </div>
     );

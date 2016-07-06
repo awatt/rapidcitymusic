@@ -24,6 +24,8 @@ import Img11_lg from './images/img11_lg.jpg'
 import Img11_sm from './images/img11_sm.jpg'
 import Img12_lg from './images/img12_lg.jpg'
 import Img12_sm from './images/img12_sm.jpg'
+import Img13_lg from './images/img13_lg.jpg'
+import Img13_sm from './images/img13_sm.jpg'
 
 import AllIsreal from './lyrics/allisreal.js'
 import Elephantine from './lyrics/elephantine.js'
@@ -33,7 +35,7 @@ import PopUpCity from './lyrics/popupcity.js'
 import SmallHours from './lyrics/smallhours.js'
 import WaywardSatellite from './lyrics/waywardsatellite.js'
 import WhyShouldIMind from './lyrics/whyshouldimind.js'
-
+import Waiting from './lyrics/waiting.js'
 import HeartsTooth from './lyrics/heartstooth.js'
 import Rivulets from './lyrics/rivulets.js'
 import SoMuchForTheFlowers from './lyrics/somuchfortheflowers.js'
@@ -42,18 +44,19 @@ import './stylesheets/paper-list.scss'
 
 const PaperCircle = () => (
   <div id='trackListContainer'>
-    <PaperItem img_sm={Img1_sm} trackNum={1} trackName='AllIsreal' img_lg={Img1_lg} lyrics={<AllIsreal />} />
-    <PaperItem img_sm={Img2_sm} trackNum={2} trackName='Elephantine' img_lg={Img2_lg} lyrics={<Elephantine />} />
-    <PaperItem img_sm={Img3_sm} trackNum={3} trackName='Eva' img_lg={Img3_lg} lyrics={<Eva />} />
-    <PaperItem img_sm={Img4_sm} trackNum={4} trackName='ICantWait' img_lg={Img4_lg} lyrics={<ICantWait />} />
-    <PaperItem img_sm={Img5_sm} trackNum={5} trackName='PopUpCity' img_lg={Img5_lg} lyrics={<PopUpCity />} />
-    <PaperItem img_sm={Img6_sm} trackNum={6} trackName='SmallHours' img_lg={Img6_lg} lyrics={<SmallHours />} />
-    <PaperItem img_sm={Img7_sm} trackNum={7} trackName='WaywardSatellite' img_lg={Img7_lg} lyrics={<WaywardSatellite />} />
-    <PaperItem img_sm={Img8_sm} trackNum={8} trackName='WhyShouldIMind' img_lg={Img8_lg} lyrics={<WhyShouldIMind />} />
-    <PaperItem img_sm={Img9_sm} trackNum={8} trackName='HeartsTooth' img_lg={Img9_lg} lyrics={<HeartsTooth />} />
-    <PaperItem img_sm={Img10_sm} trackNum={8} trackName='Rivulets' img_lg={Img10_lg} lyrics={<Rivulets />} />
-    <PaperItem img_sm={Img11_sm} trackNum={8} trackName='SoMuchForTheFlowers' img_lg={Img11_lg} lyrics={<SoMuchForTheFlowers />} />
-    <PaperItem img_sm={Img12_sm} trackNum={8} trackName='TakeTheRiver' img_lg={Img12_lg} lyrics={<TakeTheRiver />} />
+    <PaperItem img_sm={Img2_sm} trackNum={1} trackName='WaywardSatellite' img_lg={Img2_lg} lyrics={<WaywardSatellite />} />
+    <PaperItem img_sm={Img1_sm} trackNum={2} trackName='PopUpCity' img_lg={Img1_lg} lyrics={<PopUpCity />} />
+    <PaperItem img_sm={Img4_sm} trackNum={3} trackName='Waiting' img_lg={Img4_lg} lyrics={<Waiting />} />
+    <PaperItem img_sm={Img12_sm} trackNum={4} trackName='SoMuchForTheFlowers' img_lg={Img12_lg} lyrics={<SoMuchForTheFlowers />} />
+    <PaperItem img_sm={Img9_sm} trackNum={5} trackName='Eva' img_lg={Img9_lg} lyrics={<Eva />} />
+    <PaperItem img_sm={Img5_sm} trackNum={6} trackName='Rivulets' img_lg={Img5_lg} lyrics={<Rivulets />} />
+    <PaperItem img_sm={Img6_sm} trackNum={7} trackName='AllIsreal' img_lg={Img6_lg} lyrics={<AllIsreal />} />
+    <PaperItem img_sm={Img10_sm} trackNum={8} trackName='Elephantine' img_lg={Img10_lg} lyrics={<Elephantine />} />
+    <PaperItem img_sm={Img13_sm} trackNum={9} trackName='ICantWait' img_lg={Img13_lg} lyrics={<ICantWait />} />
+    <PaperItem img_sm={Img8_sm} trackNum={10} trackName='HeartsTooth' img_lg={Img8_lg} lyrics={<HeartsTooth />} />
+    <PaperItem img_sm={Img11_sm} trackNum={11} trackName='WhyShouldIMind' img_lg={Img11_lg} lyrics={<WhyShouldIMind />} />
+    <PaperItem img_sm={Img3_sm} trackNum={12} trackName='SmallHours' img_lg={Img3_lg} lyrics={<SmallHours />} />
+    <PaperItem img_sm={Img7_sm} trackNum={13} trackName='TakeTheRiver' img_lg={Img7_lg} lyrics={<TakeTheRiver />} />
   </div>
 );
 

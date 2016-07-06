@@ -5,4 +5,4 @@ import App from 'components/app';
 
 injectTapEventPlugin();
 
-render(<App testProp="here I am" otherProp="me too" />, document.getElementById('app'));
+render(<App />, document.getElementById('app'));

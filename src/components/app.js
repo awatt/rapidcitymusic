@@ -1,7 +1,3 @@
-/**
- * In this file, we create a React component
- * which incorporates components providedby material-ui.
- */
 import React, {Component} from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import Dialog from 'material-ui/Dialog';
@@ -37,8 +33,6 @@ class App extends Component {
   constructor(props, context) {
     super(props, context);
 
-    console.log(props.testProp);
-
     this.handleRequestClose = this.handleRequestClose.bind(this);
     this.handleTouchTap = this.handleTouchTap.bind(this);
 
@@ -60,7 +54,6 @@ class App extends Component {
   }
 
   render() {
-
     return (
       <MuiThemeProvider muiTheme={darkMuiTheme}>
         <div style={styles.container}>
