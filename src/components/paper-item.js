@@ -4,7 +4,7 @@ import globalEmitter from './globalEmitter.js';
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
-import DialogContent from './dialog-content.js';
+import DialogContent from './photo-dialog-content.js';
 import Header from './header.js';
 import './stylesheets/paper-item.scss';
 import $ from 'jquery';
@@ -87,7 +87,6 @@ export default class PaperItem extends Component {
     const styles = {
       dialogRoot: {
         display: 'flex',
-        // alignItems: 'center',
         justifyContent: 'center',
         paddingTop: 0,
         paddingBottom: 0,
@@ -98,22 +97,31 @@ export default class PaperItem extends Component {
         maxWidth: 'none',
       },
       dialogBody: {
+        width: 900,
+        textAlign: 'center',
         padding: 'none',
+        backgroundImage: 'URL(' + this.props.img_lg + ')',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
+        backgroundAttachment: 'fixed',
+        backgroundSize: 'contain',
       }
     };
 
+
     return (
       <span>
-        <Paper className='paperContainer' tooltip='test' ref={this.props.trackName} onTouchTap={this.handleOpen} style={paperStyle} zDepth={1} children={<img style={{height: '100%'}} src={this.props.img_sm} />} circle={true} />
+        <Paper className='paperContainer' ref={this.props.trackName} onTouchTap={this.handleOpen} style={paperStyle} zDepth={1} children={<img style={{height: '100%'}} src={this.props.img_sm} />} circle={true} />
         <Dialog
           contentStyle={styles.dialogContent}
           bodyStyle={styles.dialogBody}
           style={styles.dialogRoot}
           repositionOnUpdate={false}
-          
+          autoScrollBodyContent={true}
           modal={false}
-          autoDetectWindowHeight={false}
-          children={<DialogContent img_lg={this.props.img_lg} lyrics={this.props.lyrics} />}
+          autoDetectWindowHeight={true}
+          children={<DialogContent lyrics={this.props.lyrics} />}
+          // children={<DialogContent img_lg={this.props.img_lg} lyrics={this.props.lyrics} />}
           open={this.state.open}
           onRequestClose={this.handleClose} />
       </span>

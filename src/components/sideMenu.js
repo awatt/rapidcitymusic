@@ -6,7 +6,7 @@ import Dialog from 'material-ui/Dialog';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import Menu from 'material-ui/svg-icons/navigation/menu';
 import About from './about.js'
-import TrackList from './trackList.js'
+import SCPlayer from './scPlayer.js'
 import EmailInput from './emailInput.js'
 import Credits from './credits.js'
 import IconButton from 'material-ui/IconButton';
@@ -17,6 +17,7 @@ import MusicNoteIcon from 'material-ui/svg-icons/image/music-note';
 import CartIcon from 'material-ui/svg-icons/action/shopping-cart';
 import EmailIcon from 'material-ui/svg-icons/communication/contact-mail';
 import PeopleIcon from 'material-ui/svg-icons/social/people';
+import IMG10 from './images/img10_lg.jpg';
 
 export default class SideMenu extends Component {
 
@@ -51,7 +52,7 @@ export default class SideMenu extends Component {
   }
 
   handleSoundsDialogOpen() {
-    this.setState({dialogOpen: true, dialogTitle: 'Sounds from the Album', dialogContent: <TrackList />});
+    this.setState({dialogOpen: true, dialogTitle: 'Sounds from the Album', dialogContent: <SCPlayer />});
   }
 
   handleCreditsDialogOpen() {
@@ -83,6 +84,19 @@ export default class SideMenu extends Component {
     marginBottom: 20,
   }
 
+  const dialogBodyStyle = {
+    backgroundImage: 'URL("./src/components/images/img9_lg.jpg")',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center center',
+    backgroundAttachment: 'fixed',
+    backgroundSize: 'auto 100%',
+  }
+
+  const dialogStyle = {
+    // width: '80%',
+    // height: '80%',
+  }
+
     return (
       <div>
           <IconButton
@@ -103,12 +117,15 @@ export default class SideMenu extends Component {
           onRequestChange={(open) => this.setState({open})}
         >
         <Dialog 
-            title={this.state.dialogTitle}
+            autoScrollBodyContent={true}
+            
             modal={false}
             open={this.state.dialogOpen}
             overlayStyle={{opacity: 0}}
             onRequestClose={this.handleDialogClose}
-            children={this.state.dialogContent} />
+            children={this.state.dialogContent}
+            bodyStyle={dialogBodyStyle}
+            style={dialogStyle} />
 
           <MenuItem style={menuItemStyles} onTouchTap={this.handleAboutDialogOpen}><InfoIcon style={menuIconStyles} /></MenuItem>
           <MenuItem style={menuItemStyles} onTouchTap={this.handleSoundsDialogOpen}><MusicNoteIcon style={menuIconStyles} /></MenuItem>

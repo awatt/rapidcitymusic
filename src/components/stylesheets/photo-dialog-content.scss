@@ -1,8 +1,8 @@
-.trackContainer {
+.photoContainer {
 	position: relative;
 }
 
-.trackContainer .lyricsBox {
+.photoContainer .lyricsContainer {
 	display: none;
 	position: absolute;
 	text-align: center;
@@ -12,13 +12,13 @@
 	line-height: 1em;
 }
 
-.trackContainer .lyricsBox .lyrics {
+.photoContainer .lyricsContainer .lyrics {
 	width: 100%;
 	text-align: center;
 
 }
 
-.trackContainer .trackImgLg {
+.photoContainer .imgLg {
 	height: auto;
 	opacity: 1;
 	position: relative;
@@ -29,7 +29,7 @@
 	z-index: 2;
 }
 
-.trackContainer:hover .lyricsBox {
+.photoContainer:hover .lyricsContainer {
 	display: block;
 	z-index: 1;
 	left: 10px;
@@ -38,8 +38,7 @@
 	width: auto;
 }
 
-.trackContainer:hover .trackImgLg {
+.photoContainer:hover .imgLg {
 	opacity: 0.2;
 	transition-duration: 0.5s;
 }
-

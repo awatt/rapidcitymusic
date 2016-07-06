@@ -4,7 +4,10 @@ import './stylesheets/about.scss'
 export default class About extends Component {
     render() {
         return (
-        <p>Rapid City is the recording project of New York singer, songwriter and multi-instrumentalist, Andy Watt.  The project’s eponymous first release features baroque pop songs about escape, memory, narcissism and hockey fights.</p>
+			<div>
+				<h1>About</h1>
+			    <p>Rapid City is the recording project of New York singer, songwriter and multi-instrumentalist, Andy Watt.  The project’s eponymous first release features baroque pop songs about escape, memory, narcissism and hockey fights.</p>
+		    </div>
         );
     }
 }
