@@ -86,25 +86,21 @@ export default class PaperItem extends Component {
 
     const styles = {
       dialogRoot: {
-        display: 'flex',
-        justifyContent: 'center',
         paddingTop: 0,
-        paddingBottom: 0,
       },
       dialogContent: {
-        position: 'relative',
-        width: '80%',
-        maxWidth: 'none',
+        maxWidth: '88%',
+        width: '88%',
       },
       dialogBody: {
-        width: 900,
+        fontSize: 15,
+        color: 'rgba(255, 255, 255, 0)',
         textAlign: 'center',
-        padding: 'none',
         backgroundImage: 'URL(' + this.props.img_lg + ')',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center center',
         backgroundAttachment: 'fixed',
-        backgroundSize: 'contain',
+        backgroundSize: 'cover',
       }
     };
 
@@ -115,13 +111,13 @@ export default class PaperItem extends Component {
         <Dialog
           contentStyle={styles.dialogContent}
           bodyStyle={styles.dialogBody}
+          bodyClassName='lyricsContent'
           style={styles.dialogRoot}
           repositionOnUpdate={false}
           autoScrollBodyContent={true}
           modal={false}
           autoDetectWindowHeight={true}
-          children={<DialogContent lyrics={this.props.lyrics} />}
-          // children={<DialogContent img_lg={this.props.img_lg} lyrics={this.props.lyrics} />}
+          children={this.props.lyrics}
           open={this.state.open}
           onRequestClose={this.handleClose} />
       </span>

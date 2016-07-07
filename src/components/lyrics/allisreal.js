@@ -5,6 +5,7 @@ export default class AllIsReal extends Component {
     render() {
         return (
 			<div className='lyrics'>
+				<br/>
 				ALL IS REAL<br />
 				<br />
 				today your voice sounds like the evening <br />
@@ -30,6 +31,7 @@ export default class AllIsReal extends Component {
 				we’re thawing through the openings<br />
 				<br />
 				of real things<br />
+				<br/>
 			</div>
         );
     }

@@ -5,6 +5,8 @@ export default class PopUpCity extends Component {
     render() {
         return (
 			<div className='lyrics'>
+				<br/>
+				<br/>
 				POP-UP CITY<br/>
 				<br/>
 				little mountains of steel and pipe-dreams<br/>
@@ -26,6 +28,8 @@ export default class PopUpCity extends Component {
 				I was just your garden tool<br/>
 				I thought that I’d end up with memories<br/>
 				but I just lost my car keys somewhere new….<br/>
+				<br/>
+				<br/>
 			</div>
         );
     }
