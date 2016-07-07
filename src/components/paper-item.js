@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import { findDOMNode } from 'react-dom';
 import globalEmitter from './globalEmitter.js';
+import Clickity from './clickity.js';
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
-import DialogContent from './photo-dialog-content.js';
+import PaperTitle from './paper-title.js'
 import Header from './header.js';
 import './stylesheets/paper-item.scss';
 import $ from 'jquery';
@@ -89,8 +90,8 @@ export default class PaperItem extends Component {
         paddingTop: 0,
       },
       dialogContent: {
-        maxWidth: '88%',
-        width: '88%',
+        maxWidth: '85%',
+        width: '85%',
       },
       dialogBody: {
         fontSize: 15,
@@ -101,17 +102,38 @@ export default class PaperItem extends Component {
         backgroundPosition: 'center center',
         backgroundAttachment: 'fixed',
         backgroundSize: 'cover',
+      },
+      paperTitle: {
+        position: 'absolute',
+        color: 'rgba(255, 255, 255, 0)',
+      },
+      image: {
+        position: 'absolute',
+        opacity: 0.7,
+        top: 0,
+        left: 0,
+        height: '100%',
       }
     };
+
+    const paperChildren = [
+      <PaperTitle style={styles.paperTitle} title={this.props.trackName} />,
+      <Clickity />,
+      <img style={styles.image} src={this.props.img_sm} />
+    ]
 
 
     return (
       <span>
-        <Paper className='paperContainer' ref={this.props.trackName} onTouchTap={this.handleOpen} style={paperStyle} zDepth={1} children={<img style={{height: '100%'}} src={this.props.img_sm} />} circle={true} />
+        <Paper className='paperContainer' ref={this.props.trackName} onTouchTap={this.handleOpen} style={paperStyle} zDepth={1} children={paperChildren} circle={true} />
         <Dialog
           contentStyle={styles.dialogContent}
           bodyStyle={styles.dialogBody}
-          bodyClassName='lyricsContent'
+          bodyClassName='bodyClass'
+          contentClassName='contentClass'
+          className='rootClass'
+          overlayClassName='overlayClass'
+          titleClassName='titleClass'
           style={styles.dialogRoot}
           repositionOnUpdate={false}
           autoScrollBodyContent={true}

@@ -62,19 +62,19 @@ import './stylesheets/paper-list.scss'
 
 const PaperList = () => (
   <div id='trackListContainer'>
-    <PaperItem img_sm={Img2_sm} trackNum={1} trackName='WaywardSatellite' img_lg="./src/components/images/img2_lg.jpg" lyrics={<WaywardSatellite />} />
-    <PaperItem img_sm={Img1_sm} trackNum={2} trackName='PopUpCity' img_lg="./src/components/images/img1_lg.jpg" lyrics={<PopUpCity />} />
+    <PaperItem img_sm={Img2_sm} trackNum={1} trackName='Wayward Satellite' img_lg="./src/components/images/img2_lg.jpg" lyrics={<WaywardSatellite />} />
+    <PaperItem img_sm={Img1_sm} trackNum={2} trackName='Pop-Up City' img_lg="./src/components/images/img1_lg.jpg" lyrics={<PopUpCity />} />
     <PaperItem img_sm={Img4_sm} trackNum={3} trackName='Waiting' img_lg="./src/components/images/img4_lg.jpg" lyrics={<Waiting />} />
-    <PaperItem img_sm={Img12_sm} trackNum={4} trackName='SoMuchForTheFlowers' img_lg="./src/components/images/img12_lg.jpg" lyrics={<SoMuchForTheFlowers />} />
+    <PaperItem img_sm={Img12_sm} trackNum={4} trackName='SMFTF' img_lg="./src/components/images/img12_lg.jpg" lyrics={<SoMuchForTheFlowers />} />
     <PaperItem img_sm={Img9_sm} trackNum={5} trackName='Eva' img_lg="./src/components/images/img9_lg.jpg" lyrics={<Eva />} />
     <PaperItem img_sm={Img5_sm} trackNum={6} trackName='Rivulets' img_lg="./src/components/images/img5_lg.jpg" lyrics={<Rivulets />} />
-    <PaperItem img_sm={Img6_sm} trackNum={7} trackName='AllIsreal' img_lg="./src/components/images/img6_lg.jpg" lyrics={<AllIsreal />} />
+    <PaperItem img_sm={Img6_sm} trackNum={7} trackName='All is Real' img_lg="./src/components/images/img6_lg.jpg" lyrics={<AllIsreal />} />
     <PaperItem img_sm={Img10_sm} trackNum={8} trackName='Elephantine' img_lg="./src/components/images/img10_lg.jpg" lyrics={<Elephantine />} />
-    <PaperItem img_sm={Img13_sm} trackNum={9} trackName='ICantWait' img_lg="./src/components/images/img13_lg.jpg" lyrics={<ICantWait />} />
-    <PaperItem img_sm={Img8_sm} trackNum={10} trackName='HeartsTooth' img_lg="./src/components/images/img8_lg.jpg" lyrics={<HeartsTooth />} />
-    <PaperItem img_sm={Img11_sm} trackNum={11} trackName='WhyShouldIMind' img_lg="./src/components/images/img11_lg.jpg" lyrics={<WhyShouldIMind />} />
-    <PaperItem img_sm={Img3_sm} trackNum={12} trackName='SmallHours' img_lg="./src/components/images/img3_lg.jpg" lyrics={<SmallHours />} />
-    <PaperItem img_sm={Img7_sm} trackNum={13} trackName='TakeTheRiver' img_lg="./src/components/images/img7_lg.jpg" lyrics={<TakeTheRiver />} />
+    <PaperItem img_sm={Img13_sm} trackNum={9} trackName='I Can’t Wait' img_lg="./src/components/images/img13_lg.jpg" lyrics={<ICantWait />} />
+    <PaperItem img_sm={Img8_sm} trackNum={10} trackName='Heart’s Tooth' img_lg="./src/components/images/img8_lg.jpg" lyrics={<HeartsTooth />} />
+    <PaperItem img_sm={Img11_sm} trackNum={11} trackName='Why Should I Mind?' img_lg="./src/components/images/img11_lg.jpg" lyrics={<WhyShouldIMind />} />
+    <PaperItem img_sm={Img3_sm} trackNum={12} trackName='Small Hours' img_lg="./src/components/images/img3_lg.jpg" lyrics={<SmallHours />} />
+    <PaperItem img_sm={Img7_sm} trackNum={13} trackName='Take The River' img_lg="./src/components/images/img7_lg.jpg" lyrics={<TakeTheRiver />} />
   </div>
 );
 

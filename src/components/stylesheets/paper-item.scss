@@ -1,8 +1,21 @@
-.lyricsContent {
+.bodyClass {
     transition: color 0.2s;
+    overflow: hidden;
+    padding-right: 20px;
+    height: 100%;
+    border-radius: 8px;
 }
 
-.lyricsContent:hover {
+.bodyClass::-webkit-scrollbar { 
+    width: 0 !important; 
+    -ms-overflow-style: none;
+}
+
+.lyrics {
+    overflow: auto;
+}
+
+.bodyClass:hover {
     color: rgba(255, 255, 255, 0.8) !important;
 }
 
