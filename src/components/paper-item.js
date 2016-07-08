@@ -90,8 +90,8 @@ export default class PaperItem extends Component {
         paddingTop: 0,
       },
       dialogContent: {
-        maxWidth: '85%',
-        width: '85%',
+        maxWidth: '80%',
+        width: '80%',
       },
       dialogBody: {
         fontSize: 15,
@@ -103,13 +103,8 @@ export default class PaperItem extends Component {
         backgroundAttachment: 'fixed',
         backgroundSize: 'cover',
       },
-      paperTitle: {
-        position: 'absolute',
-        color: 'rgba(255, 255, 255, 0)',
-      },
       image: {
         position: 'absolute',
-        opacity: 0.7,
         top: 0,
         left: 0,
         height: '100%',
@@ -117,8 +112,7 @@ export default class PaperItem extends Component {
     };
 
     const paperChildren = [
-      <PaperTitle style={styles.paperTitle} title={this.props.trackName} />,
-      <Clickity />,
+      <PaperTitle title={this.props.trackName} />,
       <img style={styles.image} src={this.props.img_sm} />
     ]
 

@@ -8,7 +8,10 @@ export default class PaperTitle extends Component {
 
   render() {
     return (
-      <div className='paperTitle'>{this.props.title}</div>
+		<div className='paperTitle'>
+			<div>{this.props.title}</div>
+			<div className='clickity'>CLICKITY</div>
+		</div>
     );
   }
 }
