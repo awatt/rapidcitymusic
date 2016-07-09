@@ -1,65 +1,69 @@
 .bodyClass {
-    transition: color 0.2s;
+    // transition: color 0.2s;
+    
     overflow: hidden;
     padding-right: 20px;
     height: 100%;
     border-radius: 5px;
-}
+    &::-webkit-scrollbar { 
+        width: 0 !important; 
+        -ms-overflow-style: none;
+    }
+    // &:hover {
+    //     color: rgba(255, 255, 255, 0.8) ;
+    // }
+    .lyrics {
+    overflow: auto;
+    color: rgba(255, 255, 255, 0);
+    // visibility: hidden !important;
+    transition: 0.2s;
+    &:hover {
+        color: rgba(255, 255, 255, 0.8);
+        // visibility: visible !important;
+        background-color: rgba(0,0,0,0.2);
+        background-size: cover;
+        -webkit-background-origin:border;
+    }
 
-.bodyClass::-webkit-scrollbar { 
-    width: 0 !important; 
-    -ms-overflow-style: none;
+}
 }
 
 .contentClass > div {
     border-radius: 5px !important;
 }
 
-.lyrics {
-    overflow: auto;
+.paperContainer {
+  height: 200px;
+  width: 200px;
+  margin: 40px;
+  &:hover .paperTitle .clickity {
+    visibility: visible;
+}
 }
 
-.bodyClass:hover {
-    color: rgba(255, 255, 255, 0.8) !important;
-}
-
- .paperContainer {
- 	height: 200px;
-    width: 200px;
-    margin: 40px;
- }
-
- .paperTitle {
+.paperTitle {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 40%;
+    margin-top: 38%;
     left: 0;
     right: 0;
-    font-size: 36px;
-    line-height: 1.5em;
+    font-size: 20px;
+    line-height: 2.5em;
     color: rgba(255, 255, 255, 0.8);
- }
-
-.paperTitle + img {
-    opacity: 0.8;
-    transition: opacity 0.2s;
- }
-
-.paperTitle .clickity {
-    font-size: 0.4em;
-    visibility: hidden;
-    transition-delay: 0.1s;
- }
-
-.paperTitle + img:hover {
-    opacity: 0.2;
- }
-
-.paperContainer:hover .paperTitle .clickity {
-    visibility: visible !important;
- }
-
+    .clickity {
+        font-size: 0.4em;
+        visibility: hidden;
+        transition-delay: 0.1s;
+    }
+    + img {
+        opacity: 0.8;
+        transition: opacity 0.2s;
+        &:hover {
+            opacity: 0.3;
+        }
+    }
+}
 
 @media screen and (min-width: 450px) {
  .paperContainer {
@@ -67,6 +71,10 @@
     width: 225px;
     margin: 40px;
  }
+ .paperTitle {
+    font-size: 24px;
+    line-height: 1.5em;
+}
 }
 
 @media screen and (min-width: 550px) {
@@ -75,6 +83,10 @@
     width: 250px;
     margin: 40px;
  }
+ .paperTitle {
+    font-size: 26px;
+    line-height: 1.5em;
+}
 }
 
 @media screen and (min-width: 650px) {
@@ -83,6 +95,10 @@
     width: 300px;
     margin: 40px;
  }
+ .paperTitle {
+    font-size: 30px;
+    line-height: 1.5em;
+}
 }
 
 @media screen and (min-width: 850px) {
@@ -91,6 +107,13 @@
     width: 350px;
     margin: 40px;
  }
+
+.paperTitle {
+    font-size: 36px;
+    line-height: 1.5em;
 }
+}
+
+
 
 

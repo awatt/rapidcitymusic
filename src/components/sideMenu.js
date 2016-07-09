@@ -118,7 +118,9 @@ export default class SideMenu extends Component {
         >
         <Dialog 
             autoScrollBodyContent={true}
-            
+            className='menuClassName'
+            bodyClassName='menuBodyClassName'
+            contentClassName='menuContentClassName'
             modal={false}
             open={this.state.dialogOpen}
             overlayStyle={{opacity: 0}}

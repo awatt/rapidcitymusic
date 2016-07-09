@@ -94,8 +94,7 @@ export default class PaperItem extends Component {
         width: '80%',
       },
       dialogBody: {
-        fontSize: 15,
-        color: 'rgba(255, 255, 255, 0)',
+        fontSize: 16,
         textAlign: 'center',
         backgroundImage: 'URL(' + this.props.img_lg + ')',
         backgroundRepeat: 'no-repeat',

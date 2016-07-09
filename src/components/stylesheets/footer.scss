@@ -15,20 +15,15 @@ footer {
 	position: fixed;
 	bottom: 24px;
 	width: 100%;
-	// background-color: black;
 	z-index: 100;
+	img {
+		width: 100%;
+	}
 }
 
-#coverImg img {
-	width: 100%;
-	// display: block;
-}
 
 @media screen and (min-width: 700px) {
-    #coverImg img {
-	max-width: 1000px;
-	// display: block;
-	// margin: auto;
-	
-}
+	#coverImg img {
+		max-width: 1000px;
+	}
 }
