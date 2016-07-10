@@ -5,6 +5,7 @@ export default class HeartsTooth extends Component {
     render() {
         return (
 			<div className='lyrics'>
+				<br/>
 				HEART’S TOOTH<br />
 				<br />
 				who climbed the willow with me?<br />
@@ -50,6 +51,7 @@ export default class HeartsTooth extends Component {
 				<br />
 				you’ve got a heart’s tooth and a fountain of youth<br />
 				waging war on our dead narratives<br />
+				<br />
 			</div>
         );
     }

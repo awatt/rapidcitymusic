@@ -7,23 +7,21 @@
 
 
 @media screen and (min-width: 450px) {
-    #trackListContainer {
-	width: 50%;
-	margin-left: 17%;
-}
+	#trackListContainer {
+		width: 50%;
+		margin-left: 17%;
+	}
 }
 
 @media screen and (min-width: 550px) {
-    #trackListContainer {
-	width: 60%;
-	margin-left: 24%;
-}
+	#trackListContainer {
+		width: 60%;
+		margin-left: 24%;
+	}
 }
 
 @media screen and (min-width: 850px) {
-    #trackListContainer {
-	// width: 60%;
-	// margin-left: 30%;
-	margin-top: 10%;
-}
+	#trackListContainer {
+		margin-top: 10%;
+	}
 }

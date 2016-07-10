@@ -5,6 +5,7 @@ export default class Eva extends Component {
     render() {
         return (
 			<div className='lyrics'>
+				<br/>
 				EVA<br/>
 				<br/>
 				Eva has a question for the man<br/>
@@ -35,6 +36,7 @@ export default class Eva extends Component {
 				when I always find my bliss<br/>
 				and there’s no loneliness like<br/>
 				the loneliness of a lover?"<br/>
+				<br />
 			</div>
         );
     }

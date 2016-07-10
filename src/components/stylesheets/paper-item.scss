@@ -1,32 +1,23 @@
 .bodyClass {
-    // transition: color 0.2s;
-    
     overflow: hidden;
-    padding-right: 20px;
     height: 100%;
     border-radius: 5px;
     &::-webkit-scrollbar { 
         width: 0 !important; 
         -ms-overflow-style: none;
     }
-    // &:hover {
-    //     color: rgba(255, 255, 255, 0.8) ;
-    // }
     .lyrics {
-    overflow: auto;
-    color: rgba(255, 255, 255, 0);
-    // visibility: hidden !important;
-    transition: 0.2s;
-    &:hover {
-        color: rgba(255, 255, 255, 0.8);
-        // visibility: visible !important;
-        background-color: rgba(0,0,0,0.2);
-        background-size: cover;
-        -webkit-background-origin:border;
+        overflow: auto;
+        color: rgba(255, 255, 255, 0);
+        background-color: none;
+        transition: color 0.4s, background-color 0.2s;
+        &:hover {
+            color: rgba(255, 255, 255, 0.6);
+            background-color: rgba(0,0,0,0.4);
+        }
     }
+}
 
-}
-}
 
 .contentClass > div {
     border-radius: 5px !important;
@@ -60,55 +51,55 @@
         opacity: 0.8;
         transition: opacity 0.2s;
         &:hover {
-            opacity: 0.3;
+            opacity: 0.4;
         }
     }
 }
 
 @media screen and (min-width: 450px) {
- .paperContainer {
- 	height: 225px;
-    width: 225px;
-    margin: 40px;
- }
- .paperTitle {
+   .paperContainer {
+      height: 225px;
+      width: 225px;
+      margin: 40px;
+  }
+  .paperTitle {
     font-size: 24px;
     line-height: 1.5em;
 }
 }
 
 @media screen and (min-width: 550px) {
- .paperContainer {
- 	height: 250px;
-    width: 250px;
-    margin: 40px;
- }
- .paperTitle {
+   .paperContainer {
+      height: 250px;
+      width: 250px;
+      margin: 40px;
+  }
+  .paperTitle {
     font-size: 26px;
     line-height: 1.5em;
 }
 }
 
 @media screen and (min-width: 650px) {
- .paperContainer {
- 	height: 300px;
-    width: 300px;
-    margin: 40px;
- }
- .paperTitle {
+   .paperContainer {
+      height: 300px;
+      width: 300px;
+      margin: 40px;
+  }
+  .paperTitle {
     font-size: 30px;
     line-height: 1.5em;
 }
 }
 
 @media screen and (min-width: 850px) {
- .paperContainer {
- 	height: 350px;
-    width: 350px;
-    margin: 40px;
- }
+   .paperContainer {
+      height: 350px;
+      width: 350px;
+      margin: 40px;
+  }
 
-.paperTitle {
+  .paperTitle {
     font-size: 36px;
     line-height: 1.5em;
 }

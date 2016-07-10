@@ -5,6 +5,7 @@ export default class SoMuchForTheFlowers extends Component {
     render() {
         return (
 			<div className='lyrics'>
+				<br />
 				SO MUCH FOR THE FLOWERS<br/>
 				<br/>
 				don’t fall asleep, you’ll overshoot the beltway<br/>
@@ -48,6 +49,7 @@ export default class SoMuchForTheFlowers extends Component {
 				teach me how to use this contraption<br/>
 				we know where they’re hiding<br/>
 				aluminum siding<br/>
+				<br />
 			</div>
         );
     }

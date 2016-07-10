@@ -11,24 +11,24 @@
 }
 
 #R, #C {
-		transition-delay: 0.2s;
-		transition: 0.2s;
-	}
+	transition-delay: 0.2s;
+	transition: 0.2s;
+}
+#A, #P, #Ii, #D, #T, #Y, #Iii {
+	transition: 0.2s;
+}
+.shifted {
 	#A, #P, #Ii, #D, #T, #Y, #Iii {
-		transition: 0.2s;
+		visibility: hidden;
+		opacity: 0;
 	}
-	.shifted {
-		#A, #P, #Ii, #D, #T, #Y, #Iii {
-			visibility: hidden;
-			opacity: 0;
-		}
-		#R {
-			transform: translateX(347px);
-		}
-		#C {
-			transform: translateX(165px);
-		}
+	#R {
+		transform: translateX(347px);
 	}
+	#C {
+		transform: translateX(165px);
+	}
+}
 
 @media screen and (min-width: 450px) {
 	#cover_svg {

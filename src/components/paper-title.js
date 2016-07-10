@@ -10,7 +10,7 @@ export default class PaperTitle extends Component {
     return (
 		<div className='paperTitle'>
 			<div>{this.props.title}</div>
-			<div className='clickity'>CLICK ME</div>
+			<div className='clickity'>CLICK FOR LYRICS</div>
 		</div>
     );
   }

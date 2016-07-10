@@ -5,6 +5,7 @@ export default class TakeTheRiver extends Component {
     render() {
         return (
 			<div className='lyrics'>
+				<br />
 				TAKE THE RIVER<br />
 				<br />
 				it’s growing outward like a leaf<br />
@@ -49,6 +50,7 @@ export default class TakeTheRiver extends Component {
 				where there’s no choice but to be free<br />
 				<br />
 				just take the river….<br />
+				<br />
 			</div>
         );
     }

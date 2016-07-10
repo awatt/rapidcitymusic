@@ -5,6 +5,7 @@ export default class Waiting extends Component {
     render() {
         return (
 			<div className='lyrics'>
+				<br />
 				WAITING<br />
 				<br />
 				the storm door opens - like a giant’s hand<br />
@@ -41,6 +42,7 @@ export default class Waiting extends Component {
 				never be another choice<br />
 				the straightaways are short and sweet<br />
 				lead us to them with your voice<br />
+				<br />
 			</div>
         );
     }

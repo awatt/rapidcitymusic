@@ -19,7 +19,7 @@ export default class PaperItem extends Component {
           shifted: false,
           zIndex: 0,
       };
-      
+
       this.handleOpen = this.handleOpen.bind(this);
       this.handleClose = this.handleClose.bind(this);
       this.handleScroll = this.handleScroll.bind(this);
@@ -69,22 +69,6 @@ export default class PaperItem extends Component {
 
   render() {
 
-    const actions = [
-      this.props.playerWidget,
-      <RaisedButton
-        label="Close"
-        primary={true}
-        onTouchTap={this.handleClose} />,
-    ];
-
-    const paperStyle = {
-      position: 'relative',
-      textAlign: 'center',
-      overflow: 'hidden',
-      display: 'inline-block',
-      zIndex: this.state.zIndex,
-    };
-
     const styles = {
       dialogRoot: {
         paddingTop: 0,
@@ -94,31 +78,38 @@ export default class PaperItem extends Component {
         width: '80%',
       },
       dialogBody: {
-        fontSize: 16,
+        fontSize: 17,
         textAlign: 'center',
+        padding: 'none',
         backgroundImage: 'URL(' + this.props.img_lg + ')',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center center',
         backgroundAttachment: 'fixed',
         backgroundSize: 'cover',
       },
-      image: {
+      imageSm: {
         position: 'absolute',
         top: 0,
         left: 0,
         height: '100%',
-      }
+      },
+      paperStyle: {
+      position: 'relative',
+      textAlign: 'center',
+      overflow: 'hidden',
+      display: 'inline-block',
+      zIndex: this.state.zIndex,
+    }
     };
 
     const paperChildren = [
       <PaperTitle title={this.props.trackName} />,
-      <img style={styles.image} src={this.props.img_sm} />
+      <img style={styles.imageSm} src={this.props.img_sm} />
     ]
-
 
     return (
       <span>
-        <Paper className='paperContainer' ref={this.props.trackName} onTouchTap={this.handleOpen} style={paperStyle} zDepth={1} children={paperChildren} circle={true} />
+        <Paper className='paperContainer' ref={this.props.trackName} onTouchTap={this.handleOpen} style={styles.paperStyle} zDepth={1} children={paperChildren} circle={true} />
         <Dialog
           contentStyle={styles.dialogContent}
           bodyStyle={styles.dialogBody}

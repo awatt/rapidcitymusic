@@ -60,8 +60,6 @@ const PaperList = () => (
   </div>
 );
 
-
-
 export default PaperList;
 
 

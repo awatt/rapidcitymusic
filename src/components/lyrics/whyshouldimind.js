@@ -5,6 +5,7 @@ export default class WhyShouldIMind extends Component {
     render() {
         return (
 			<div className='lyrics'>
+				<br />
 				WHY SHOULD I MIND?<br/>
 				<br/>
 				I was telling a story<br/>
@@ -73,6 +74,7 @@ export default class WhyShouldIMind extends Component {
 				will not hold the tears we’ll all be crying soon<br/>
 				in a week you will find out<br/>
 				that you’ve been starring in a movie by yourself<br/>
+				<br />
 			</div>
         );
     }

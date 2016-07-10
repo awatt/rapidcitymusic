@@ -5,6 +5,7 @@ export default class SmallHours extends Component {
     render() {
         return (
 			<div className='lyrics'>
+				<br />
 				SMALL HOURS<br/>
 				<br/>
 				you’ve been sleeping on the floor<br/>
@@ -39,6 +40,7 @@ export default class SmallHours extends Component {
 				the winds are stirring up the leaves<br/>
 				I hear the thumping of a presence<br/>
 				coming to life beneath the eaves<br/>
+				<br />
 			</div>
         );
     }

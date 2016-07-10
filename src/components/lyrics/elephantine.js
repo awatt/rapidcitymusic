@@ -5,6 +5,7 @@ export default class Elephantine extends Component {
     render() {
         return (
 			<div className='lyrics'>
+				<br/>
 				ELEPHANTINE<br/>
 				<br/>
 				an empty room, a cluttered mind<br/>
@@ -42,6 +43,7 @@ export default class Elephantine extends Component {
 				I see a face up in the sky<br/>
 				<br/>
 				elephantine<br/>
+				<br />
 			</div>
         );
     }

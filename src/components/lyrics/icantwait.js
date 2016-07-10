@@ -5,6 +5,7 @@ export default class ICantWait extends Component {
     render() {
         return (
 			<div className='lyrics'>
+				<br/>
 				I CAN’T WAIT<br/>
 				<br/>
 				I can’t wait<br/>
@@ -38,6 +39,7 @@ export default class ICantWait extends Component {
 				I get a little on every shirt.<br/>
 				and all my marbles they can’t wait<br/>
 				to forget about those days.<br/>
+				<br />
 			</div>
         );
     }

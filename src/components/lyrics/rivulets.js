@@ -5,6 +5,7 @@ export default class Rivulets extends Component {
     render() {
         return (
 			<div className='lyrics'>
+				<br />
 				RIVULETS<br />
 				<br />
 				travel lightly, turning slightly blue<br />
@@ -32,6 +33,7 @@ export default class Rivulets extends Component {
 				<br />
 				with ageless rhythm, catechism<br />
 				in this old temple falling down<br />
+				<br />
 			</div>
         );
     }

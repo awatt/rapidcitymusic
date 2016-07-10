@@ -5,6 +5,7 @@ export default class WaywardSatellite extends Component {
     render() {
         return (
 				<div className='lyrics'>
+					<br />
 					WAYWARD SATELLITE<br/>
 					<br/>
 					five miles from all the half smiles<br/>
@@ -50,6 +51,7 @@ export default class WaywardSatellite extends Component {
 					finally found my doppelganger<br/>
 					where I left him by the side<br/>
 					of a crooked road<br/>
+					<br />
 				</div>
         );
     }
