@@ -103,8 +103,8 @@ export default class PaperItem extends Component {
     };
 
     const paperChildren = [
-      <PaperTitle title={this.props.trackName} />,
-      <img style={styles.imageSm} src={this.props.img_sm} />
+      <PaperTitle title={this.props.trackName} key={1} />,
+      <img style={styles.imageSm} src={this.props.img_sm} key={2} />,
     ]
 
     return (

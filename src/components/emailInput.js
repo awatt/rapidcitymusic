@@ -24,7 +24,7 @@ export default class EmailInput extends Component {
 
   render() {
     return (
-      <div>
+      <div class='info'>
         <TextField
           id="text-field-controlled"
           value={this.state.value}

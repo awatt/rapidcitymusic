@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import '../stylesheets/lyrics.scss'
 
 export default class SmallHours extends Component {
     render() {

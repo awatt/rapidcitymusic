@@ -48,20 +48,20 @@ export default class SideMenu extends Component {
 
   handleAboutDialogOpen(event) {
     console.log(event)
-    this.setState({dialogOpen: true, dialogTitle: 'About', dialogContent: <About />});
+    this.setState({dialogOpen: true, dialogContent: <About />});
   }
 
   handleSoundsDialogOpen() {
-    this.setState({dialogOpen: true, dialogTitle: 'Sounds from the Album', dialogContent: <SCPlayer />});
+    this.setState({dialogOpen: true, dialogContent: <SCPlayer />});
   }
 
   handleCreditsDialogOpen() {
-    this.setState({dialogOpen: true, dialogTitle: 'Album Credits', dialogContent: <Credits />});
+    this.setState({dialogOpen: true, dialogContent: <Credits />});
   }
   
   handleContactDialogOpen(event) {
     console.log(event)
-    this.setState({dialogOpen: true, dialogTitle: 'Subscribe to the Rapid City Newsletter for updates on new music, videos, events and shows in your area', dialogContent: <EmailInput />});
+    this.setState({dialogOpen: true, dialogContent: <EmailInput />});
   }    
 
   handleDialogClose() {
@@ -72,30 +72,30 @@ export default class SideMenu extends Component {
 
   render() {
 
-   const menuIconStyles = {
-    fill: '#366396',
-    height: 38,
-    width: 38,
-    verticalAlign: 'middle',
-  }
-
-  const menuItemStyles = {
-    marginTop: 20,
-    marginBottom: 20,
-  }
-
-  const dialogBodyStyle = {
-    backgroundImage: 'URL("./src/components/images/img9_lg.jpg")',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center center',
-    backgroundAttachment: 'fixed',
-    backgroundSize: 'auto 100%',
-  }
-
-  const dialogStyle = {
+    const styles = {
+      menuIconStyles: {
+        fill: '#366396',
+        height: 38,
+        width: 38,
+        verticalAlign: 'middle',
+      },
+      menuItemStyles: {
+        marginTop: 20,
+        marginBottom: 20,
+      },
+      dialogBodyStyle: {
+        backgroundImage: 'URL("./src/components/images/img9_lg.jpg")',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
+        backgroundAttachment: 'fixed',
+        backgroundSize: 'contain',
+        // backgroundSize: 'auto 100%',
+      },
+      dialogStyle: {
     // width: '80%',
     // height: '80%',
   }
+}
 
     return (
       <div>
@@ -118,22 +118,22 @@ export default class SideMenu extends Component {
         >
         <Dialog 
             autoScrollBodyContent={true}
-            className='menuClassName'
-            bodyClassName='menuBodyClassName'
-            contentClassName='menuContentClassName'
+            className='menuClass'
+            bodyClassName='menuBodyClass'
+            contentClassName='menuContentClass'
             modal={false}
             open={this.state.dialogOpen}
             overlayStyle={{opacity: 0}}
             onRequestClose={this.handleDialogClose}
             children={this.state.dialogContent}
-            bodyStyle={dialogBodyStyle}
-            style={dialogStyle} />
+            bodyStyle={styles.dialogBodyStyle}
+            style={styles.dialogStyle} />
 
-          <MenuItem style={menuItemStyles} onTouchTap={this.handleAboutDialogOpen}><InfoIcon style={menuIconStyles} /></MenuItem>
-          <MenuItem style={menuItemStyles} onTouchTap={this.handleSoundsDialogOpen}><MusicNoteIcon style={menuIconStyles} /></MenuItem>
-          <MenuItem style={menuItemStyles} linkButton={true} target='_blank' href='https://rapidcity.bandcamp.com/' onTouchTap={this.handleClose}><CartIcon style={menuIconStyles} /></MenuItem>
-          <MenuItem style={menuItemStyles} onTouchTap={this.handleContactDialogOpen}><EmailIcon style={menuIconStyles} /></MenuItem>
-          <MenuItem style={menuItemStyles} onTouchTap={this.handleCreditsDialogOpen}><PeopleIcon style={menuIconStyles} /></MenuItem>
+          <MenuItem style={styles.menuItemStyles} onTouchTap={this.handleAboutDialogOpen}><InfoIcon style={styles.menuIconStyles} /></MenuItem>
+          <MenuItem style={styles.menuItemStyles} onTouchTap={this.handleSoundsDialogOpen}><MusicNoteIcon style={styles.menuIconStyles} /></MenuItem>
+          <MenuItem style={styles.menuItemStyles} linkButton={true} target='_blank' href='https://rapidcity.bandcamp.com/' onTouchTap={this.handleClose}><CartIcon style={styles.menuIconStyles} /></MenuItem>
+          <MenuItem style={styles.menuItemStyles} onTouchTap={this.handleContactDialogOpen}><EmailIcon style={styles.menuIconStyles} /></MenuItem>
+          <MenuItem style={styles.menuItemStyles} onTouchTap={this.handleCreditsDialogOpen}><PeopleIcon style={styles.menuIconStyles} /></MenuItem>
         </Drawer>
       </div>
     );

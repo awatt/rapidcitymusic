@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './stylesheets/scPlayer.scss'
 import PaperList from './paper-list'
 
 export default class TrackList extends Component {
