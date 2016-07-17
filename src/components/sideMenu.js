@@ -15,7 +15,7 @@ import './stylesheets/sideMenu.scss'
 import InfoIcon from 'material-ui/svg-icons/action/info';
 import MusicNoteIcon from 'material-ui/svg-icons/image/music-note';
 import CartIcon from 'material-ui/svg-icons/action/shopping-cart';
-import EmailIcon from 'material-ui/svg-icons/communication/contact-mail';
+import EmailIcon from 'material-ui/svg-icons/communication/email';
 import PeopleIcon from 'material-ui/svg-icons/social/people';
 import IMG10 from './images/img10_lg.jpg';
 

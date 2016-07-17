@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
-import './stylesheets/contact.scss'
+import './stylesheets/contact.scss';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
 import TextField from 'material-ui/TextField';
+import EmailIcon from 'material-ui/svg-icons/communication/email';
+import emailer from './emailer.js';
 
 export default class EmailInput extends Component {
 
@@ -8,18 +11,29 @@ export default class EmailInput extends Component {
     super(props);
 
     this.state = {
-      value: 'Email Address',
+      email: 'Email Address',
+      message: 'Message (optional)'
     };
 
-    this.handleChange = this.handleChange.bind(this)
+    this.handleEmailChange = this.handleEmailChange.bind(this)
+    this.handleMessageChange = this.handleMessageChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange(e) {
+  handleEmailChange(e) {
     this.setState({
-      value: e.target.value,
+      email: e.target.value,
     });
-    console.log('e.target.value', e.target.value)
-    console.log('this.state.value', this.state.value)
+  };
+
+  handleMessageChange(e) {
+    this.setState({
+      message: e.target.value,
+    });
+  };
+
+  handleSubmit() {
+    emailer(this.state.email, this.state.message);
   };
 
   render() {
@@ -27,8 +41,19 @@ export default class EmailInput extends Component {
       <div class='info'>
         <TextField
           id="text-field-controlled"
-          value={this.state.value}
-          onChange={this.handleChange} />
+          value={this.state.email}
+          onChange={this.handleEmailChange} />
+          <TextField
+          id="text-field-controlled"
+          value={this.state.message}
+          onChange={this.handleMessageChange} />
+
+          <FloatingActionButton
+          onTouchTap={this.handleSubmit}
+          touch={true}
+          >
+          <EmailIcon />
+          </FloatingActionButton>
       </div>
     );
   }

@@ -5,14 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --devtool eval --hot --progress --colors"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.0.0",
+    "json-loader": "^0.5.4",
     "material-ui": "^0.15.0",
+    "nodemailer": "^2.5.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-tap-event-plugin": "^1.0.0"
