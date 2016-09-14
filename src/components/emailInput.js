@@ -3,7 +3,8 @@ import './stylesheets/contact.scss';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import TextField from 'material-ui/TextField';
 import EmailIcon from 'material-ui/svg-icons/communication/email';
-import emailer from './emailer.js';
+import $ from 'jquery';
+// import emailer from './emailer.js';
 
 export default class EmailInput extends Component {
 
@@ -21,6 +22,7 @@ export default class EmailInput extends Component {
   }
 
   handleEmailChange(e) {
+    console.log("email changed")
     this.setState({
       email: e.target.value,
     });
@@ -32,9 +34,47 @@ export default class EmailInput extends Component {
     });
   };
 
-  handleSubmit() {
-    emailer(this.state.email, this.state.message);
+  handleSubmit(){
+    console.log('EMAIL SUBMIT HANDLER REACHED')
+    $.ajax({
+        // url: '/email',
+        url: 'http://localhost:3000/email',
+        method: 'POST',
+        dataType: 'json',
+        cache: false,
+        success: function(data) {
+        // Success..
+        console.log('ajax request sent from react component')
+        console.log('data passed into react component: ', data)
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(status, err.toString());
+      }.bind(this)
+    });
+
   };
+
+// componentDidMount(){
+//                $.ajax({
+//         url: '/email',
+//         method: 'POST',
+//         dataType: 'json',
+//         cache: false,
+//         success: function(data) {
+//         // Success..
+//         console.log('ajax request sent from react component')
+//         console.log('data passed into react component: ', data)
+//       }.bind(this),
+//       error: function(xhr, status, err) {
+//         console.error(status, err.toString());
+//       }.bind(this)
+//     });
+//   }
+
+
+    // emailer(this.state.email, this.state.message);
+
+
 
   render() {
     return (

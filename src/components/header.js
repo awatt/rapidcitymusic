@@ -11,21 +11,21 @@ export default class Header extends Component {
         };
 
       this.handleShift = this.handleShift.bind(this);
-  }
+      }
 
-  	handleShift(){
-  		this.setState({shifted: !this.state.shifted});
-  	}
+    	handleShift(){
+    		this.setState({shifted: !this.state.shifted});
+    	}
 
-  	componentDidMount() {
-		globalEmitter.on('toggleShift', this.handleShift);
-  	}
+    	componentDidMount() {
+  		globalEmitter.on('toggleShift', this.handleShift);
+    	}
 
-  	componentWillUnmount() {
-  		globalEmitter.removeListener('toggleShift')
-  	}
+    	componentWillUnmount() {
+    		globalEmitter.removeListener('toggleShift')
+    	}
 
-    render() {
+      render() {
 
         return (
      

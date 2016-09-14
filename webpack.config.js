@@ -1,16 +1,21 @@
 var webpack = require('webpack');
 var path = require('path');
+var buildPath = path.resolve(__dirname, 'public','build');
+var mainPath = path.resolve(__dirname, 'src', 'index.js');
+var nodeModulesPath = path.resolve(__dirname, 'node_modules');
+
 
 module.exports = {
     devtool: 'inline-source-map',
     entry: [
-        'webpack-dev-server/client?http://127.0.0.1:8080/',
-        'webpack/hot/only-dev-server',
-        './src'
+        // 'webpack/hot/dev-server',
+        // 'webpack-dev-server/client?http://127.0.0.1:8080/',
+        mainPath
     ],
     output: {
-        path: path.join(__dirname, 'public'),
-        filename: 'bundle.js'
+        path: buildPath,
+        filename: 'bundle.js',
+        publicPath: '/build/'
     },
     resolve: {
         modulesDirectories: ['node_modules', 'src'],
@@ -20,7 +25,8 @@ module.exports = {
         loaders: [
             {
                 test: /\.jsx?$/,
-                exclude: /node_modules/,
+                // exclude: /node_modules/,
+                exclude: [nodeModulesPath],
                 loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015']
             },
             {
@@ -40,14 +46,14 @@ module.exports = {
             }
         ]
     },
-    node: {
-        net: 'empty',
-        tls: 'empty',
-        fs: 'empty',
-        dns: 'empty',
-    },
+    // node: {
+    //     net: 'empty',
+    //     tls: 'empty',
+    //     fs: 'empty',
+    //     dns: 'empty',
+    // },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.HotModuleReplacementPlugin()
+        // new webpack.NoErrorsPlugin()
     ]
 };
