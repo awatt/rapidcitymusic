@@ -4,7 +4,6 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import TextField from 'material-ui/TextField';
 import EmailIcon from 'material-ui/svg-icons/communication/email';
 import $ from 'jquery';
-// import emailer from './emailer.js';
 
 export default class EmailInput extends Component {
 
@@ -22,7 +21,6 @@ export default class EmailInput extends Component {
   }
 
   handleEmailChange(e) {
-    console.log("email changed")
     this.setState({
       email: e.target.value,
     });
@@ -35,17 +33,17 @@ export default class EmailInput extends Component {
   };
 
   handleSubmit(){
-    console.log('EMAIL SUBMIT HANDLER REACHED')
+    var info = 
     $.ajax({
-        // url: '/email',
-        url: 'http://localhost:3000/email',
-        method: 'POST',
-        dataType: 'json',
+        url: "http://localhost:3000/email",
+        method: "POST",
+        dataType: "json",
+        data: { "email" : this.state.email, "message": this.state.message },
         cache: false,
         success: function(data) {
-        // Success..
-        console.log('ajax request sent from react component')
-        console.log('data passed into react component: ', data)
+
+        console.log('email data sent via ajax: ', data)
+
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(status, err.toString());
@@ -53,28 +51,6 @@ export default class EmailInput extends Component {
     });
 
   };
-
-// componentDidMount(){
-//                $.ajax({
-//         url: '/email',
-//         method: 'POST',
-//         dataType: 'json',
-//         cache: false,
-//         success: function(data) {
-//         // Success..
-//         console.log('ajax request sent from react component')
-//         console.log('data passed into react component: ', data)
-//       }.bind(this),
-//       error: function(xhr, status, err) {
-//         console.error(status, err.toString());
-//       }.bind(this)
-//     });
-//   }
-
-
-    // emailer(this.state.email, this.state.message);
-
-
 
   render() {
     return (

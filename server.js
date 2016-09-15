@@ -1,20 +1,64 @@
-var express = require('express');
 var path = require('path');
-var httpProxy = require('http-proxy');
-var email = require('./routes/email');
-var proxy = httpProxy.createProxyServer();
+var express = require('express');
+var webpack = require('webpack');
+var webpackMiddleware = require('webpack-dev-middleware');
+var webpackHotMiddleware = require('webpack-hot-middleware');
+var config = require('./webpack.config.js');
+var bodyParser = require('body-parser');
+
+var isDeveloping = process.env.NODE_ENV !== 'production';
+console.log("isDeveloping: ", isDeveloping)
+var port = isDeveloping ? 3000 : process.env.PORT;
 var app = express();
-console.log(process.env.NODE_ENV);
 
-var environment = process.env.NODE_ENV;
-// console.log('environment: ,' environment)
-var isProduction = process.env.NODE_ENV === 'production';
-var port = isProduction ? process.env.PORT : 3000;
-var publicPath = path.resolve(__dirname, 'public');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(express.static(publicPath));
-
+//nodemail server-side route
+var email = require('./routes/email');
 app.use('/email', email);
+
+console.log("GOT TO SERVER")
+
+// var publicPath = path.resolve(__dirname, 'public');
+// app.use(express.static(publicPath));
+
+if (isDeveloping) {
+	var compiler = webpack(config);
+	var middleware = webpackMiddleware(compiler, {
+		publicPath: config.output.publicPath,
+		contentBase: 'src',
+		stats: {
+			colors: true,
+			hash: false,
+			timings: true,
+			chunks: false,
+			chuckModuels: false,
+			modules: false
+		}
+	});
+
+	console.log('GOT PAST WEBPACK MIDDLEWARE')
+
+	app.use(middleware);
+	app.use(webpackHotMiddleware(compiler));
+	app.get('*', function response(req, res){
+		res.sendFile(path.join(__dirname, 'index.html'));
+	});
+	// app.get('*', function response(req,res){
+	// 	console.log('GOT INTO MAIN APP.GET RESPONSE')
+	// 	console.log('middleware.fileSystem: ', middleware.fileSystem)
+	// 	res.write(middleware.fileSystem.readFileSync(path.join(__dirname, './index.html')))
+	// 	console.log('GOT PAST RES.WRITE')
+	// 	res.end();
+	// });
+
+} else {
+	app.use(express.static(__dirname + '/dist'));
+	app.get('*', function response(req, res){
+		res.sendFile(path.join(__dirname, 'index.html'));
+	});
+}
 
 
   // app.get('*', function response(req, res) {
@@ -23,8 +67,8 @@ app.use('/email', email);
 
 // if(!isProduction){
 // 	console.log("DEVELOPMENT MODE ACHIEVED")
-// 	var bundle = require('./server/bundle.js');
-// 	bundle();
+	// var bundle = require('./server/bundle.js');
+	// bundle();
 
 // 	app.all('/build/*', function(req, res){
 // 		proxy.web(req, res, {
@@ -39,10 +83,17 @@ app.use('/email', email);
 // 	// });
 // }
 
-proxy.on('error', function(e){
-	console.log('Could not connect to proxy, please try again...');
-});
+// proxy.on('error', function(e){
+// 	console.log('Could not connect to proxy, please try again...');
+// });
 
-app.listen(port, function () {
-	console.log('Server running on port ' + port);
+// app.listen(port, function () {
+// 	console.log('Server running on port ' + port);
+// });
+
+app.listen(port, '0.0.0.0', function onStart (err) {
+	if(err){
+		console.log(err);
+	}
+	console.info('==> 🌎 Listening on port %s. Open up http://0.0.0.0:%s/ in your browser.', port, port);
 });

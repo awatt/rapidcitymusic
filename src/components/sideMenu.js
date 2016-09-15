@@ -47,7 +47,6 @@ export default class SideMenu extends Component {
   }
 
   handleAboutDialogOpen(event) {
-    console.log(event)
     this.setState({dialogOpen: true, dialogContent: <About />});
   }
 
@@ -60,7 +59,6 @@ export default class SideMenu extends Component {
   }
   
   handleContactDialogOpen(event) {
-    console.log(event)
     this.setState({dialogOpen: true, dialogContent: <EmailInput />});
   }    
 
