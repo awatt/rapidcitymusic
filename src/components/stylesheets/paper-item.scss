@@ -1,3 +1,7 @@
+.lyricsBuffer {
+  padding: 0 10px;
+}
+
 .bodyClass {
     overflow: hidden;
     height: 100%;
@@ -17,7 +21,6 @@
         }
     }
 }
-
 
 .contentClass > div {
     border-radius: 5px !important;
@@ -39,7 +42,7 @@
     margin-top: 38%;
     left: 0;
     right: 0;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 2.5em;
     color: rgba(255, 255, 255, 0.8);
     .clickity {
@@ -63,7 +66,7 @@
       margin: 40px;
   }
   .paperTitle {
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1.5em;
 }
 }
@@ -75,7 +78,7 @@
       margin: 40px;
   }
   .paperTitle {
-    font-size: 26px;
+    font-size: 24px;
     line-height: 1.5em;
 }
 }
@@ -87,7 +90,7 @@
       margin: 40px;
   }
   .paperTitle {
-    font-size: 30px;
+    font-size: 28px;
     line-height: 1.5em;
 }
 }
@@ -100,7 +103,7 @@
   }
 
   .paperTitle {
-    font-size: 36px;
+    font-size: 34px;
     line-height: 1.5em;
 }
 }

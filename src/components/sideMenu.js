@@ -17,7 +17,8 @@ import MusicNoteIcon from 'material-ui/svg-icons/image/music-note';
 import CartIcon from 'material-ui/svg-icons/action/shopping-cart';
 import EmailIcon from 'material-ui/svg-icons/communication/email';
 import PeopleIcon from 'material-ui/svg-icons/social/people';
-import IMG10 from './images/img10_lg.jpg';
+import img9_lg from './images/img9_lg.jpg';
+
 
 export default class SideMenu extends Component {
 
@@ -82,18 +83,18 @@ export default class SideMenu extends Component {
         marginBottom: 20,
       },
       dialogBodyStyle: {
-        backgroundImage: 'URL("./src/components/images/img9_lg.jpg")',
+        backgroundImage: 'URL(' + img9_lg + ')',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center center',
         backgroundAttachment: 'fixed',
-        backgroundSize: 'contain',
-        // backgroundSize: 'auto 100%',
+        backgroundSize: 'cover',
       },
       dialogStyle: {
     // width: '80%',
     // height: '80%',
   }
 }
+
 
     return (
       <div>

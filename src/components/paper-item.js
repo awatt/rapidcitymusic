@@ -9,6 +9,7 @@ import PaperTitle from './paper-title.js'
 import Header from './header.js';
 import './stylesheets/paper-item.scss';
 import $ from 'jquery';
+import img9_lg from './images/img9_lg.jpg';
 
 export default class PaperItem extends Component {
     constructor(props) {
@@ -78,7 +79,7 @@ export default class PaperItem extends Component {
         width: '80%',
       },
       dialogBody: {
-        fontSize: 17,
+        fontSize: 14,
         textAlign: 'center',
         padding: 'none',
         backgroundImage: 'URL(' + this.props.img_lg + ')',
