@@ -47,7 +47,7 @@ export default class SideMenu extends Component {
     });
   }
 
-  handleAboutDialogOpen(event) {
+  handleAboutDialogOpen() {
     this.setState({dialogOpen: true, dialogContent: <About />});
   }
 
@@ -59,7 +59,7 @@ export default class SideMenu extends Component {
     this.setState({dialogOpen: true, dialogContent: <Credits />});
   }
   
-  handleContactDialogOpen(event) {
+  handleContactDialogOpen() {
     this.setState({dialogOpen: true, dialogContent: <EmailInput />});
   }    
 

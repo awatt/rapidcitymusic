@@ -4,6 +4,7 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import TextField from 'material-ui/TextField';
 import EmailIcon from 'material-ui/svg-icons/communication/email';
 import $ from 'jquery';
+import Snackbar from 'material-ui/Snackbar';
 
 export default class EmailInput extends Component {
 
@@ -12,12 +13,14 @@ export default class EmailInput extends Component {
 
     this.state = {
       email: 'Email Address',
-      message: 'Message (optional)'
+      message: 'Message (optional)',
+      open: false,
     };
 
     this.handleEmailChange = this.handleEmailChange.bind(this)
     this.handleMessageChange = this.handleMessageChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleRequestClose = this.handleRequestClose.bind(this)
   }
 
   handleEmailChange(e) {
@@ -29,6 +32,12 @@ export default class EmailInput extends Component {
   handleMessageChange(e) {
     this.setState({
       message: e.target.value,
+    });
+  };
+
+  handleRequestClose() {
+    this.setState({
+      open: false,
     });
   };
 
@@ -48,6 +57,13 @@ export default class EmailInput extends Component {
       error: function(xhr, status, err) {
         console.error(status, err.toString());
       }.bind(this)
+    });
+
+    //display 
+    this.setState({
+      email: '',
+      message: '',
+      open: true,
     });
 
   };
@@ -70,6 +86,11 @@ export default class EmailInput extends Component {
           >
           <EmailIcon />
           </FloatingActionButton>
+          <Snackbar
+          open={this.state.open}
+          message="You've Been Added to the Email List!"
+          autoHideDuration={4000}
+          onRequestClose={this.handleRequestClose} />
       </div>
     );
   }
