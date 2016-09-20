@@ -9,8 +9,8 @@ export default class Footer extends Component {
 			  <CoverPhoto />
 			    <footer>
 	              <div class="container">
-		            <div>Copyright © 2016 · All Rights Reserved · RAPID CITY</div>
-		            <div>Made by Andrew Watt using <a href="http://www.material-ui.com/">Material-UI</a></div>
+		            <div>Copyright © 2016 · All Rights Reserved · RAPID CITY 
+		            · Made by <span>Andy Watt</span> with <a href="https://facebook.github.io/react/">ReactJS</a> & <a href="http://www.material-ui.com/">Material-UI</a></div>
 	              </div>
 	            </footer>
 	        </div>

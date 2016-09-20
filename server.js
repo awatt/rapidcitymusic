@@ -25,6 +25,16 @@ console.log("GOT TO SERVER")
 
 if (isDeveloping) {
 	var compiler = webpack(config);
+
+	  compiler.plugin('compile', function() {
+	    console.log('Bundling...');
+	    bundleStart = Date.now();
+	  });
+
+	  compiler.plugin('done', function() {
+	    console.log('Bundled in ' + (Date.now() - bundleStart) + 'ms!');
+	  });		
+
 	var middleware = webpackMiddleware(compiler, {
 		publicPath: config.output.publicPath,
 		contentBase: 'src',
