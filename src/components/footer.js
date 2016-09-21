@@ -9,11 +9,11 @@ export default class Footer extends Component {
 			  <CoverPhoto />
 			    <footer>
 	              <div class="container">
-		            <div>Copyright © 2016 · All Rights Reserved · RAPID CITY 
-		            · Made by <span>Andy Watt</span> with <a href="https://facebook.github.io/react/">ReactJS</a> & <a href="http://www.material-ui.com/">Material-UI</a></div>
+		            <div>© 2016 · All Rights Reserved · Built by <a href="https://www.linkedin.com/in/awatt2">Andy Watt</a> using <a className="tech" href="https://nodejs.org/">Node.js</a>, <a className="tech" href="https://facebook.github.io/react/">ReactJS</a> and <a className="tech" href="http://www.material-ui.com/">Material-UI</a></div>
 	              </div>
 	            </footer>
 	        </div>
         );
     }
 }
+

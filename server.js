@@ -7,7 +7,6 @@ var config = require('./webpack.config.js');
 var bodyParser = require('body-parser');
 
 var isDeveloping = process.env.NODE_ENV !== 'production';
-console.log("isDeveloping: ", isDeveloping)
 var port = isDeveloping ? 3000 : process.env.PORT;
 var app = express();
 
@@ -17,8 +16,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //nodemail server-side route
 var email = require('./routes/email');
 app.use('/email', email);
-
-console.log("GOT TO SERVER")
 
 // var publicPath = path.resolve(__dirname, 'public');
 // app.use(express.static(publicPath));
@@ -47,8 +44,6 @@ if (isDeveloping) {
 			modules: false
 		}
 	});
-
-	console.log('GOT PAST WEBPACK MIDDLEWARE')
 
 	app.use(middleware);
 	app.use(webpackHotMiddleware(compiler));
