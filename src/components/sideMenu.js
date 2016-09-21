@@ -88,6 +88,7 @@ export default class SideMenu extends Component {
         backgroundPosition: 'center center',
         backgroundAttachment: 'fixed',
         backgroundSize: 'cover',
+        padding: '10px 30px'
       },
       dialogStyle: {
     // width: '80%',

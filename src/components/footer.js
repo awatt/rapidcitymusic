@@ -9,7 +9,7 @@ export default class Footer extends Component {
 			  <CoverPhoto />
 			    <footer>
 	              <div class="container">
-		            <div>© 2016 · All Rights Reserved · Built by <a href="https://www.linkedin.com/in/awatt2">Andy Watt</a> using <a className="tech" href="https://nodejs.org/">Node.js</a>, <a className="tech" href="https://facebook.github.io/react/">ReactJS</a> and <a className="tech" href="http://www.material-ui.com/">Material-UI</a></div>
+		            <div>© 2016 · All Rights Reserved · Built by <a href="https://www.linkedin.com/in/awatt2" target="_blank">Andy Watt</a> using <a className="tech" href="https://nodejs.org/" target="_blank">Node.js</a>, <a className="tech" href="https://facebook.github.io/react/" target="_blank">ReactJS</a> and <a className="tech" href="http://www.material-ui.com/" target="_blank">Material-UI</a></div>
 	              </div>
 	            </footer>
 	        </div>
