@@ -27,6 +27,7 @@ export default class SideMenu extends Component {
     this.state = {
       open: false,
       dialogOpen: false,
+      isEmailForm: false,
     };
     this.handleToggle = this.handleToggle.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -60,12 +61,13 @@ export default class SideMenu extends Component {
   }
   
   handleContactDialogOpen() {
-    this.setState({dialogOpen: true, dialogContent: <EmailInput />});
+    this.setState({dialogOpen: true, isEmailForm: true, dialogContent: <EmailInput />});
   }    
 
   handleDialogClose() {
     this.setState({
-      dialogOpen: false
+      dialogOpen: false,
+      isEmailForm: false,
     }); 
   }
 
@@ -73,14 +75,19 @@ export default class SideMenu extends Component {
 
     const styles = {
       menuIconStyles: {
-        fill: '#366396',
-        height: 38,
-        width: 38,
+        // fill: '#6286b0',
+        // fill: '#0971B2',
+        // fill: 'rgba(255, 238, 13, 0.6)',
+        fill: 'rgba(232, 175, 12, 0.7)',
+        height: 40,
+        width: 40,
         verticalAlign: 'middle',
       },
       menuItemStyles: {
-        marginTop: 20,
-        marginBottom: 20,
+        // marginTop: 25,
+        // marginBottom: 25,
+        paddingTop: 25,
+        paddingBottom: 25,
       },
       dialogBodyStyle: {
         backgroundImage: 'URL(' + img9_lg + ')',
@@ -103,7 +110,8 @@ export default class SideMenu extends Component {
           onTouchTap={this.handleToggle}
           touch={true}
           id='SVG Icon'
-          iconStyle={{fill: '#6286b0'}}
+          // iconStyle={{fill: '#B20000'}}
+          iconStyle={{fill: '#E8AF0C'}}
           >
           <Menu />
           </IconButton>
@@ -120,7 +128,7 @@ export default class SideMenu extends Component {
             autoScrollBodyContent={true}
             className='menuClass'
             bodyClassName='menuBodyClass'
-            contentClassName='menuContentClass'
+            contentClassName={this.state.isEmailForm ? 'menuContentClass emailForm' : 'menuContentClass'}
             modal={false}
             open={this.state.dialogOpen}
             overlayStyle={{opacity: 0}}

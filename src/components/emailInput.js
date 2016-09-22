@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import './stylesheets/contact.scss';
-// import FloatingActionButton from 'material-ui/FloatingActionButton';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
@@ -68,41 +66,48 @@ export default class EmailInput extends Component {
       open: true,
     });
 
+    const buttonStyles = {
+
+    }
+
+
   };
 
   render() {
     return (
       <div className='info'>
-        <div>Get on the mailing list!  Write to me!</div>
-          <div>
-            <TextField
-              // id="text-field-controlled"
-              className='emailField'
-              hintText="xxx@xxxx.com"
-              floatingLabelText="Your email address"
-              value={this.state.email}
-              onChange={this.handleEmailChange} />
-          </div>
-          <div>
-            <TextField
-              className='emailField'
-              hintText="blah blah fuck Trump ... blah di blah"
-              floatingLabelText="Write me a msg (if you wanna)"
-              multiLine={true}
-              rows={4}
-              value={this.state.message}
-              onChange={this.handleMessageChange} />
-          </div>
+        <h3 className='emailTitle'>Join the MAILING LIST for news and announcements (NO SPAM!)</h3>
+        <div className='emailFields'>
+              <div>
+                <TextField
+                  hintText="xxx@xxxx.com"
+                  floatingLabelText="enter your email address"
+                  value={this.state.email}
+                  onChange={this.handleEmailChange} />
+              </div>
+              <div>
+                <TextField
+                  floatingLabelText="write me a msg (if you wanna)"
+                  multiLine={true}
+                  rows={8}
+                  value={this.state.message}
+                  onChange={this.handleMessageChange} />
+              </div>
+        </div>
 
+        <div className="submitButton">
           <FlatButton label="Primary" primary={true}
             onTouchTap={this.handleSubmit}
             touch={true}
-            label="SUBMIT"
-            labelPosition="after"
-            primary={true}
-            icon={<EmailIcon />}
+            label="JOIN"
+            // labelPosition="after"
+            // labelStyle={{color: 'rgba(255, 238, 13, 0.6)'}}
+            // labelStyle={{color: 'rgba(178, 0, 0, 0.6)'}}
+            labelStyle={{color: 'rgba(255, 238, 13, 0.8)', fontSize: '22px', letterSpacing: '8px'}}
+            // icon={<EmailIcon style={{fill:'red'}} />}
             >
           </FlatButton>
+        </div>
           <Snackbar
           open={this.state.open}
           message="You've Been Added to the Email List!"

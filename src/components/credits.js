@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import './stylesheets/credits.scss'
 
 export default class Credits extends Component {
     render() {
         return (
 		<div className='info'>
+			<h3>ALBUM CREDITS</h3>
 			<p>All songs written, produced, engineered and performed by Andy Watt at The Pillbox in Brooklyn, NY.</p>
 			<p>Track 6 co-produced by Gary Wang.</p>
 			<p>Additional recording at The Sweat Shop and Studio McPantaloon in Brooklyn, NY.</p>
