@@ -13,6 +13,7 @@ export default class EmailInput extends Component {
 
     this.state = {
       email: '',
+      isEmail: false,
       message: '',
       open: false,
     };
@@ -23,9 +24,15 @@ export default class EmailInput extends Component {
     this.handleRequestClose = this.handleRequestClose.bind(this)
   }
 
+
   handleEmailChange(e) {
-    this.setState({
+    function validateEmail(email) {
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    }
+      this.setState({
       email: e.target.value,
+      isEmail: validateEmail(e.target.value),
     });
   };
 
@@ -76,18 +83,29 @@ export default class EmailInput extends Component {
   render() {
     return (
       <div className='info'>
-        <h3 className='emailTitle'>Join the MAILING LIST for news and announcements (NO SPAM!)</h3>
+          <div className='emailTitle'>
+            <h2>MAILING LIST</h2>
+            <p className='emailSubTitle'>join for show dates and other news<br/>(no spam)!</p>
+          </div>
         <div className='emailFields'>
               <div>
                 <TextField
-                  hintText="xxx@xxxx.com"
+                  hintText="xxx@xxxx.com/org/net"
                   floatingLabelText="enter your email address"
+                  // floatingLabelFocusStyle={{color: '#1485CC'}}
+                  // underlineFocusStyle={{borderColor: '#1485CC'}}
+                  floatingLabelFocusStyle={{color: 'rgba(232, 175, 12, 0.9)'}}
+                  underlineFocusStyle={{borderColor: 'rgba(232, 175, 12, 0.9)'}}
                   value={this.state.email}
                   onChange={this.handleEmailChange} />
               </div>
               <div>
                 <TextField
                   floatingLabelText="write me a msg (if you wanna)"
+                  // floatingLabelFocusStyle={{color: '#1485CC'}}
+                  // underlineFocusStyle={{borderColor: '#1485CC'}}
+                  floatingLabelFocusStyle={{color: 'rgba(232, 175, 12, 0.9)'}}
+                  underlineFocusStyle={{borderColor: 'rgba(232, 175, 12, 0.9)'}}
                   multiLine={true}
                   rows={8}
                   value={this.state.message}
@@ -99,11 +117,17 @@ export default class EmailInput extends Component {
           <FlatButton label="Primary" primary={true}
             onTouchTap={this.handleSubmit}
             touch={true}
-            label="JOIN"
+            disabled={!this.state.isEmail}
+            label="SUBMIT"
             // labelPosition="after"
             // labelStyle={{color: 'rgba(255, 238, 13, 0.6)'}}
             // labelStyle={{color: 'rgba(178, 0, 0, 0.6)'}}
-            labelStyle={{color: 'rgba(255, 238, 13, 0.8)', fontSize: '22px', letterSpacing: '8px'}}
+            // labelStyle={{color: 'rgba(255, 238, 13, 0.8)', fontSize: '22px', letterSpacing: '8px'}}
+            labelStyle={{color: this.state.isEmail ? 'rgba(232, 175, 12, 0.9)' : 'rgba(232, 175, 12, 0.2)', fontSize: '22px', letterSpacing: '8px'}}
+            // labelStyle={{color: 'rgba(255, 13, 255, 0.8)', fontSize: '22px', letterSpacing: '8px'}}
+            // labelStyle={{color: 'rgba(255, 13, 255, 0.8)', fontSize: '22px', letterSpacing: '8px'}}
+            // labelStyle={{color: 'rgba(20, 133, 204, 0.9)', fontSize: '22px', letterSpacing: '8px'}}
+            // labelStyle={{color: 'rgba(204, 0, 0, 0.9)', fontSize: '22px', letterSpacing: '8px'}}
             // icon={<EmailIcon style={{fill:'red'}} />}
             >
           </FlatButton>
