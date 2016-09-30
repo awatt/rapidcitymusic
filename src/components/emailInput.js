@@ -69,13 +69,10 @@ export default class EmailInput extends Component {
     //display 
     this.setState({
       email: '',
+      isEmail: false,
       message: '',
       open: true,
     });
-
-    const buttonStyles = {
-
-    }
 
 
   };
@@ -134,8 +131,11 @@ export default class EmailInput extends Component {
         </div>
           <Snackbar
           open={this.state.open}
-          message="You've Been Added to the Email List!"
-          autoHideDuration={4000}
+          className='snackbarRoot'
+          message="NOICE!"
+          autoHideDuration={2000}
+          style={{ color: 'rgba(232, 12, 122, 0.7)'}}
+          bodyStyle={{ minWidth: 'none', backgroundColor: 'black'}}
           onRequestClose={this.handleRequestClose} />
       </div>
     );

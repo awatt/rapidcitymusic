@@ -9,6 +9,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 import SvgIcon from 'material-ui/SvgIcon';
 import Header from './header';
+import ScrollArrow from './scroll-arrow'
 import SideMenu from './sideMenu';
 import Footer from './footer';
 import PaperList from './paper-list'
@@ -59,6 +60,7 @@ class App extends Component {
         <div style={styles.container}>
           <div id='menuContainer'><SideMenu /></div>
           <PaperList />
+          <ScrollArrow />
           <Header />
           <Footer />
         </div>
