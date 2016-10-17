@@ -78,7 +78,8 @@ export default class SideMenu extends Component {
         // fill: '#6286b0',
         // fill: '#0971B2',
         // fill: 'rgba(255, 238, 13, 0.6)',
-        fill: 'rgba(232, 175, 12, 0.9)',
+        // fill: 'rgba(232, 175, 12, 0.9)',
+        fill: 'rgba(209, 72, 21, 0.7)',
         // fill: 'rgba(255, 13, 255, 0.8)',
         height: 40,
         width: 40,
@@ -112,7 +113,9 @@ export default class SideMenu extends Component {
           touch={true}
           id='SVG Icon'
           // iconStyle={{fill: 'rgba(255, 13, 255, 0.8)'}}
-          iconStyle={{fill: 'rgba(232, 175, 12, 0.9)'}}
+          // iconStyle={{fill: 'rgba(232, 175, 12, 0.9)'}}
+          iconStyle={{fill: 'rgba(209, 72, 21, 0.8)'}}
+          // iconStyle={{fill: 'rgba(27, 139, 181, 0.8)'}}
           // iconStyle={{fill: '#1485CC'}}
           // iconStyle={{fill: '#CC4A14'}}
           // iconStyle={{fill: '#99583D'}}

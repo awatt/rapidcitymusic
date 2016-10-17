@@ -66,6 +66,8 @@ export default class EmailInput extends Component {
       }.bind(this)
     });
 
+    
+
     //display 
     this.setState({
       email: '',
@@ -91,8 +93,10 @@ export default class EmailInput extends Component {
                   floatingLabelText="enter your email address"
                   // floatingLabelFocusStyle={{color: '#1485CC'}}
                   // underlineFocusStyle={{borderColor: '#1485CC'}}
-                  floatingLabelFocusStyle={{color: 'rgba(232, 175, 12, 0.9)'}}
-                  underlineFocusStyle={{borderColor: 'rgba(232, 175, 12, 0.9)'}}
+                  // floatingLabelFocusStyle={{color: 'rgba(232, 175, 12, 0.9)'}}
+                  // underlineFocusStyle={{borderColor: 'rgba(232, 175, 12, 0.9)'}}
+                  floatingLabelFocusStyle={{color: 'rgba(209, 72, 21, 0.9)'}}
+                  underlineFocusStyle={{borderColor: 'rgba(209, 72, 21, 0.9)'}}
                   value={this.state.email}
                   onChange={this.handleEmailChange} />
               </div>
@@ -101,8 +105,10 @@ export default class EmailInput extends Component {
                   floatingLabelText="write me a msg (if you wanna)"
                   // floatingLabelFocusStyle={{color: '#1485CC'}}
                   // underlineFocusStyle={{borderColor: '#1485CC'}}
-                  floatingLabelFocusStyle={{color: 'rgba(232, 175, 12, 0.9)'}}
-                  underlineFocusStyle={{borderColor: 'rgba(232, 175, 12, 0.9)'}}
+                  // floatingLabelFocusStyle={{color: 'rgba(232, 175, 12, 0.9)'}}
+                  floatingLabelFocusStyle={{color: 'rgba(209, 72, 21, 0.9)'}}
+                  // underlineFocusStyle={{borderColor: 'rgba(232, 175, 12, 0.9)'}}
+                  underlineFocusStyle={{borderColor: 'rgba(209, 72, 21, 0.9)'}}
                   multiLine={true}
                   rows={8}
                   value={this.state.message}
