@@ -5,6 +5,8 @@ var utilities = require('../src/components/utilities')
 
 router.post('/', function(req, res) {
 
+    console.log("post request")
+
 var smtpConfig = {
     host: 'smtp.gmail.com',
     port: 465,
@@ -31,10 +33,15 @@ var mailOptions = {
 
     // send mail with defined transport object 
     transporter.sendMail(mailOptions, function(error, info){
+        console.log("sendmail run")
         if(error){
-            return console.log(error);
+            console.log(error);
+            res.end("error")
+        } else {
+            console.log('Message sent: ' + info.response);
+            res.end("sent");    
         }
-        console.log('Message sent: ' + info.response);
+        
     });
 
 }
