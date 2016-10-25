@@ -10,6 +10,11 @@ var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 
 module.exports = {
     devtool: 'eval-source-map',
+    externals: {
+        'cheerio': 'window',
+        'react/lib/ExecutionEnvironment': true,
+        'react/lib/ReactContext': true,
+    },
     entry: [
         // 'webpack/hot/dev-server',
         // 'webpack-dev-server/client?http://127.0.0.1:8080/',
