@@ -110,7 +110,7 @@ export default class PaperItem extends Component {
 
     return (
       <span>
-        <Paper className='paperContainer' ref={this.props.trackName} onTouchTap={this.handleOpen} style={styles.paperStyle} zDepth={1} children={paperChildren} circle={true} />
+        <Paper className='paperContainer' onTouchTap={this.handleOpen} ref={this.props.trackName} style={styles.paperStyle} zDepth={1} children={paperChildren} circle={true} />
         <Dialog
           contentStyle={styles.dialogContent}
           bodyStyle={styles.dialogBody}

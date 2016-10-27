@@ -22,12 +22,6 @@ const styles = {
   },
 };
 
-const muiTheme = getMuiTheme({
-  palette: {
-    accent1Color: deepOrange500,
-  },
-});
-
 const darkMuiTheme = getMuiTheme(darkBaseTheme);
 
 class App extends Component {
