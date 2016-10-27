@@ -31,11 +31,7 @@ export default class scrollDownArrow extends Component {
       render() {
 
     const arrowStyles = {
-        // fill: '#6286b0',
-        // fill: '#0971B2',
-        // fill: 'rgba(255, 238, 13, 0.6)',
         fill: 'rgba(255, 13, 255, 0.4)',
-        // fill: 'rgba(232, 175, 12, 0.4)',
         padding: 20,
         height: 40,
         width: 40,
