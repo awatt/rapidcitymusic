@@ -22,13 +22,13 @@ var transporter = nodemailer.createTransport(smtpConfig);
 var text = req.body.email + ' would like to join the Rapid City mailing list!  Message: ' + req.body.message;
 var email = 'rapidcitymail@gmail.com';
 
-function sendMail(email, text){
+function sendMail(email, subject, message){
             
 var mailOptions = {
-    from: email, // sender address 
+    from: 'rapidcitymail@gmail.com', // sender address 
     to: email, // list of receivers 
-    subject: 'RapidCityMusic Email List Submission', // Subject line 
-    text: text, // plaintext body 
+    subject: subject, // Subject line 
+    text: message, // plaintext body 
 };
 
     // send mail with defined transport object 
@@ -39,14 +39,14 @@ var mailOptions = {
             res.end("error")
         } else {
             console.log('Message sent: ' + info.response);
-            res.end("sent");    
+            res.send({result:"success"})
         }
         
     });
 
 }
 
-sendMail(email, text)
+sendMail(req.body.email, req.body.subject, req.body.message)
 
 });
 

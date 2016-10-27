@@ -24,7 +24,6 @@ export default class EmailInput extends Component {
     this.handleRequestClose = this.handleRequestClose.bind(this)
   }
 
-
   handleEmailChange(e) {
     function validateEmail(email) {
       var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -49,15 +48,43 @@ export default class EmailInput extends Component {
   };
 
   handleSubmit(){
-    var info = 
+
+    var newEmail = this.state.email;
+    var requestText = newEmail + ' would like to join the Rapid City mailing list!  Message: ' + this.state.message;
+    var confirmText = "You've been added to the Rapid City Mailing List!";
+
+    
     $.ajax({
         url: "http://localhost:3000/email",
         method: "POST",
         dataType: "json",
-        data: { "email" : this.state.email, "message": this.state.message },
+        data: { 
+          "email" : 'rapidcitymail@gmail.com',
+          "subject": 'RapidCityMusic Email List Submission',
+          "message": requestText
+        },
         cache: false,
         success: function(data) {
-          console.log("mail send succeeded: ", data)
+
+          //send out confirm email to requester
+          $.ajax({
+            url: "http://localhost:3000/email",
+            method: "POST",
+            dataType: "json",
+            data: { 
+              "email" : newEmail,
+              "subject": 'Thank You!',
+              "message": confirmText
+            },
+            cache: false,
+            success: function(data) {
+              console.log("mail confirm succeeded: ", data)
+
+            }.bind(this),
+            error: function(xhr, status, err) {
+              console.error(status, err.toString());
+            }.bind(this)
+          });
 
       }.bind(this),
       error: function(xhr, status, err) {
