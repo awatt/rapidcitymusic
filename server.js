@@ -17,9 +17,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 var email = require('./routes/email');
 app.use('/email', email);
 
-// var publicPath = path.resolve(__dirname, 'public');
-// app.use(express.static(publicPath));
-
 if (isDeveloping) {
 	var compiler = webpack(config);
 
@@ -48,53 +45,16 @@ if (isDeveloping) {
 	app.use(middleware);
 	app.use(webpackHotMiddleware(compiler));
 	app.get('*', function response(req, res){
-		res.sendFile(path.join(__dirname, 'index.html'));
+		res.sendFile(path.join(__dirname, 'index_dev.html'));
 	});
-	// app.get('*', function response(req,res){
-	// 	console.log('GOT INTO MAIN APP.GET RESPONSE')
-	// 	console.log('middleware.fileSystem: ', middleware.fileSystem)
-	// 	res.write(middleware.fileSystem.readFileSync(path.join(__dirname, './index.html')))
-	// 	console.log('GOT PAST RES.WRITE')
-	// 	res.end();
-	// });
 
 } else {
+	console.log("GOT INTO BUILD PROCESS")
 	app.use(express.static(__dirname + '/dist'));
 	app.get('*', function response(req, res){
-		res.sendFile(path.join(__dirname, 'index.html'));
+		res.sendFile(path.join(__dirname, '/dist/index.html'));
 	});
 }
-
-
-  // app.get('*', function response(req, res) {
-  //   res.sendFile(path.join(__dirname, 'index.html'));
-  // });
-
-// if(!isProduction){
-// 	console.log("DEVELOPMENT MODE ACHIEVED")
-	// var bundle = require('./server/bundle.js');
-	// bundle();
-
-// 	app.all('/build/*', function(req, res){
-// 		proxy.web(req, res, {
-// 			target: 'http://localhost:8080'
-// 		});
-// 	});
-
-// 	// app.all('/email/*', function(req, res){
-// 	// 	proxy.web(req, res, {
-// 	// 		target: 'http://localhost:8080'
-// 	// 	});
-// 	// });
-// }
-
-// proxy.on('error', function(e){
-// 	console.log('Could not connect to proxy, please try again...');
-// });
-
-// app.listen(port, function () {
-// 	console.log('Server running on port ' + port);
-// });
 
 app.listen(port, '0.0.0.0', function onStart (err) {
 	if(err){

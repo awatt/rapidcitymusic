@@ -2,25 +2,20 @@
 
 var path = require('path');
 var webpack = require('webpack');
-var buildPath = path.resolve(__dirname, '/dist/');
-var mainPath = path.resolve(__dirname, 'src', 'index.js');
+var StatsPlugin = require('stats-webpack-plugin');
+var buildPath = path.join(__dirname, '/dist/');
+var mainPath = path.join(__dirname, 'src/index.js');
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
-    devtool: 'eval-source-map',
-    externals: {
-        'cheerio': 'window',
-        'react/lib/ExecutionEnvironment': true,
-        'react/lib/ReactContext': true,
-    },
     entry: [
-        'webpack-hot-middleware/client?reload=true',
         mainPath
     ],
     output: {
         path: buildPath,
-        filename: 'bundle.js',
+        filename: 'bundle.min.js',
         publicPath: '/'
     },
     resolve: {
@@ -53,9 +48,23 @@ module.exports = {
     },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false,
+        screw_ie8: true
+      }
+    }),
+    new HtmlWebpackPlugin({
+      template: 'index_template.html',
+      inject: 'body',
+      filename: 'index.html'
+  }),
+    new StatsPlugin('webpack.stats.json', {
+      source: false,
+      modules: false
+    }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
+      'process.env.NODE_ENV': JSON.stringify('production')
     })
   ]
 };

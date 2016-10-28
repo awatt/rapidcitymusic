@@ -53,9 +53,9 @@ export default class EmailInput extends Component {
     var requestText = newEmail + ' would like to join the Rapid City mailing list!  Message: ' + this.state.message;
     var confirmText = "You've been added to the Rapid City Mailing List!";
 
-    
+    //send join request email to rapidcitymusic@gmail.com
     $.ajax({
-        url: "http://localhost:3000/email",
+        url: "http://rapidcitymusic.herokuapp.com/email",
         method: "POST",
         dataType: "json",
         data: { 
@@ -68,7 +68,7 @@ export default class EmailInput extends Component {
 
           //send out confirm email to requester
           $.ajax({
-            url: "http://localhost:3000/email",
+            url: "http://rapidcitymusic.herokuapp.com/email",
             method: "POST",
             dataType: "json",
             data: { 
