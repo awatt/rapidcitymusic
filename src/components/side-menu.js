@@ -6,12 +6,12 @@ import Dialog from 'material-ui/Dialog';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import Menu from 'material-ui/svg-icons/navigation/menu';
 import About from './about.js'
-import SCPlayer from './scPlayer.js'
-import EmailInput from './emailInput.js'
+import SCPlayer from './sc-player.js'
+import EmailInput from './email-input.js'
 import Credits from './credits.js'
 import IconButton from 'material-ui/IconButton';
 import {red500, yellow500, blue500} from 'material-ui/styles/colors';
-import './stylesheets/sideMenu.scss'
+import './stylesheets/side-menu.scss'
 import InfoIcon from 'material-ui/svg-icons/action/info';
 import MusicNoteIcon from 'material-ui/svg-icons/image/music-note';
 import CartIcon from 'material-ui/svg-icons/action/shopping-cart';

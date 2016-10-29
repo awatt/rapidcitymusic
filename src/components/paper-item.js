@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { findDOMNode } from 'react-dom';
-import globalEmitter from './globalEmitter.js';
+import globalEmitter from './global-emitter.js';
 import Clickity from './clickity.js';
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';

@@ -10,7 +10,7 @@ import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 import SvgIcon from 'material-ui/SvgIcon';
 import Header from './header';
 import ScrollArrow from './scroll-arrow'
-import SideMenu from './sideMenu';
+import SideMenu from './side-menu';
 import Footer from './footer';
 import PaperList from './paper-list'
 import '../index.scss';

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import coverImg from './images/coverPhoto_edit_base_gradients.png'
+import coverImg from './images/cover-photo_edit_base_gradients.png'
 
 export default class CoverPhoto extends Component {
     render() {
