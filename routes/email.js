@@ -1,7 +1,7 @@
 var express = require('express');
 var nodemailer = require('nodemailer');
 var router = express.Router();
-var utilities = require('../src/components/utilities')
+// var utilities = require('../src/components/utilities')
 
 router.post('/', function(req, res) {
 
@@ -12,8 +12,8 @@ var smtpConfig = {
     port: 465,
     secure: true, // use SSL
     auth: {
-        user: utilities.gmailUN,
-        pass: utilities.gmailPW
+        user: process.env.GMAIL_UN,
+        pass: process.env.GMAIL_PW
     }
 };
 
