@@ -55,7 +55,7 @@ export default class EmailInput extends Component {
 
     //send join request email to rapidcitymusic@gmail.com
     $.ajax({
-        url: "http://rapidcitymusic.herokuapp.com/email",
+        url: "https://rapidcitymusic.herokuapp.com/email",
         method: "POST",
         dataType: "json",
         data: { 
@@ -68,7 +68,7 @@ export default class EmailInput extends Component {
 
           //send out confirm email to requester
           $.ajax({
-            url: "http://rapidcitymusic.herokuapp.com/email",
+            url: "https://rapidcitymusic.herokuapp.com/email",
             method: "POST",
             dataType: "json",
             data: { 
