@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import globalEmitter from './globalEmitter.js';
+import globalEmitter from './global-emitter.js';
 import ScrollArrow from 'material-ui/svg-icons/navigation/arrow-drop-down';
 import InfoIcon from 'material-ui/svg-icons/action/info';
 import './stylesheets/scroll-arrow.scss'
