@@ -8,7 +8,6 @@
   },
   "scripts": {
     "test": "mocha -w --require ignore-styles test/helpers/browser.js test/*.spec.js",
-    "postinstall": "rimraf dist && cross-env webpack --config ./webpack.production.config.js --progress --profile --colors",
     "start": "node server.js"
   },
   "keywords": [],
