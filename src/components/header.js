@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import globalEmitter from './globalEmitter.js';
+import globalEmitter from './global-emitter.js';
 import './stylesheets/header.scss'
 
 
