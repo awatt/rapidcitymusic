@@ -17,8 +17,8 @@ var smtpConfig = {
     }
 };
 
-console.log("process.env.GMAIL_UN: ", process.env.GMAIL_UN,)
-console.log("process.env.GMAIL_UN: ", process.env.GMAIL_PW,)
+console.log("process.env.GMAIL_UN: ", process.env.GMAIL_UN)
+console.log("process.env.GMAIL_UN: ", process.env.GMAIL_PW)
 
 var transporter = nodemailer.createTransport(smtpConfig);
 
