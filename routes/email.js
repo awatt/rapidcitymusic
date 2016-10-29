@@ -17,6 +17,9 @@ var smtpConfig = {
     }
 };
 
+console.log("process.env.GMAIL_UN: ", process.env.GMAIL_UN,)
+console.log("process.env.GMAIL_UN: ", process.env.GMAIL_PW,)
+
 var transporter = nodemailer.createTransport(smtpConfig);
 
 var text = req.body.email + ' would like to join the Rapid City mailing list!  Message: ' + req.body.message;
