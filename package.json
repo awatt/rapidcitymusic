@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "6.0.0"
+    "node": "6.0.0",
+    "npm": "3.10.9"
   },
   "scripts": {
     "test": "mocha -w --require ignore-styles test/helpers/browser.js test/*.spec.js",
