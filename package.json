@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "6.0.0"
+    },
   "scripts": {
     "test": "mocha -w --require ignore-styles test/helpers/browser.js test/*.spec.js",
     "postinstall": "rimraf dist && cross-env webpack --config ./webpack.production.config.js --progress --profile --colors",
