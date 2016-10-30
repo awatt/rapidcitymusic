@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 // var isDeveloping = process.env.NODE_ENV !== 'production';
 // var port = isDeveloping ? 3000 : Number(process.env.PORT);
 var app = express();
-var port = Number(process.env.PORT) || 3000;
+var port = Number(process.env.PORT) || 8080;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -17,6 +17,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //nodemail server-side route
 var email = require('./routes/email');
 app.use('/email', email);
+
+// console.log("process.env.GMAIL_UN: ", process.env.GMAIL_UN)
+// console.log("process.env.GMAIL_PW: ", process.env.GMAIL_PW)
 
 // if (isDeveloping) {
 // 	var compiler = webpack(config);

@@ -1,26 +1,61 @@
 var express = require('express');
 var nodemailer = require('nodemailer');
 var router = express.Router();
-// var utilities = require('../src/components/utilities')
+// var config = require('../src/components/utilities');
+var xoauth2 = require('xoauth2');
 
 router.post('/', function(req, res) {
 
     console.log("post request")
 
-var smtpConfig = {
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true, // use SSL
+// var smtpConfig = {
+//     host: 'smtp.gmail.com',
+//     port: 465,
+//     secure: true, // use SSL
+//     auth: {
+//         user: process.env.GMAIL_UN,
+//         pass: process.env.GMAIL_PW
+//     }
+// };
+
+// console.log("process.env.GMAIL_UN: ", process.env.GMAIL_UN)
+// console.log("process.env.GMAIL_PW: ", process.env.GMAIL_PW)
+
+// var transporter = nodemailer.createTransport(smtpConfig);
+
+
+// listen for token updates (if refreshToken is set)
+// you probably want to store these to a db
+// generator.on('token', function(token){
+//     console.log('New token for %s: %s', token.user, token.accessToken);
+// });
+
+// login
+// var transporter = nodemailer.createTransport({
+//     service: 'gmail',
+//     auth: {
+//         xoauth2: xoauth2.createXOAuth2Generator({
+//             user: config.mailUser,
+//             clientId: config.clientId,
+//             clientSecret: config.clientSecret,
+//             refreshToken: config.refreshToken
+//             // accessToken: '{cached access token}'
+//         })
+//     }
+// });
+
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
     auth: {
-        user: process.env.GMAIL_UN,
-        pass: process.env.GMAIL_PW
+        xoauth2: xoauth2.createXOAuth2Generator({
+            user: process.env.MAIL_USER,
+            clientId: process.env.CLIENT_ID,
+            clientSecret: process.env.CLIENT_SECRET,
+            refreshToken: process.env.REFRESH_TOKEN
+            // accessToken: '{cached access token}'
+        })
     }
-};
-
-console.log("process.env.GMAIL_UN: ", process.env.GMAIL_UN)
-console.log("process.env.GMAIL_UN: ", process.env.GMAIL_PW)
-
-var transporter = nodemailer.createTransport(smtpConfig);
+});
 
 var text = req.body.email + ' would like to join the Rapid City mailing list!  Message: ' + req.body.message;
 var email = 'rapidcitymail@gmail.com';
