@@ -37,7 +37,7 @@ export default class PaperItem extends Component {
   handleScroll() {
     
     //adjust photo z-index for clickability once it clears the 'fence'
-    let scrollTop = event.srcElement.body.scrollTop;
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     let elPosition = $(findDOMNode(this)).position().top;
 
     //toggle title shift when photo scrolls overlaps with it

@@ -16,7 +16,6 @@ export default class scrollDownArrow extends Component {
       }
 
     	handleShift(){
-            console.log("this.state.shifted: ", this.state.shifted)
     		this.setState({shifted: !this.state.shifted});
     	}
 
@@ -37,6 +36,8 @@ export default class scrollDownArrow extends Component {
         width: 40,
         verticalAlign: 'middle',
       }
+
+      
 
         return (            
               <div id="arrow_container">

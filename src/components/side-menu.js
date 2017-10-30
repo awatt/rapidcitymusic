@@ -74,7 +74,7 @@ export default class SideMenu extends Component {
 
     const styles = {
       menuIconStyles: {
-        fill: 'rgba(209, 72, 21, 0.7)',
+        fill: 'rgba(232, 175, 12, 0.6)',
         height: 40,
         width: 40,
         verticalAlign: 'middle',
@@ -104,7 +104,7 @@ export default class SideMenu extends Component {
           onTouchTap={this.handleToggle}
           touch={true}
           id='SVG Icon'
-          iconStyle={{fill: 'rgba(209, 72, 21, 0.8)'}}
+          iconStyle={{fill: 'rgba(232, 175, 12, 0.6)'}}
           >
           <Menu />
           </IconButton>
